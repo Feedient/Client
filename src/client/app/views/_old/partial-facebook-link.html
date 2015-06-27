@@ -1,0 +1,11 @@
+<a href="{{link}}" class="facebook-link" target="_blank">
+	{{#if picture}}
+		<div class="link-thumbnail" style="background-image:url({{picture}})"></div>
+	{{/if}}
+	<div>
+		<div class="link-title">{{name}}</div>
+		<span class="link-domain">{{getDomain link}}</span>
+		<div class="link-description">{{description}}</div>
+	</div>
+	<div class="clear"></div>
+</a>

@@ -1,0 +1,40 @@
+ï»¿{
+    "404": {
+        "header":   "Oops, Il n'y a rien ici",
+        "content":  "La page demandée n'a pu être trouvée"
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Risque de bogues...",
+            "welcome": "Bienvenue dans Feedient!",
+            "content": "Ceci est une version alpha de notre application web, seulement une partie de nos services fonctionnent. Si vous rencontrez des bogues ou avez une suggestion &agrave; faire , vous pouvez utiliser le bouton Avis situ&eacute; a gauche.",
+            "footer":  "Cordialement, l'&eacute;quipe Feedient",
+            "close":   "Fermer la fenêtre"
+        },
+		"development": {
+			"header": "Pas encore disponible...",
+			"content": "n'est pas disponible dans la version actuelle de Feedient. Revenez plus tard."
+		}
+    },
+    "api": {
+        "auth": "Erreur d'autorisation",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Nos serveurs on rencontr&eacute; une erreur. R&eacute;essayer. Si le probl&egrave;me persiste, nous le signaler ",
+            "contentlink": "nous le faire savoir"
+        },
+        "404": {
+            "header": "Page non trouv&eacute;e...",
+            "content": "La page demand&eacute;e n'a pas pu être trouv&eacute;e."
+        },
+       "general": { 
+			"header": "Impossible de communiquer...",
+            "content": "Impossible de se connecter au serveur. Veuillez r&eacute;essayer."
+        }
+    },
+    "feed": {
+        "load": "Impossible de charger vos posts.",
+        "responded": "a r&eacute;pondu avec l'erreur suivante:",
+        "tryAgain": "Veuillez r&eacute;essayer plus tard."
+    }
+}

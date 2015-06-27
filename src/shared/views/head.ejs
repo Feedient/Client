@@ -1,0 +1,58 @@
+		<meta charset="UTF-8">
+		<title><% if (typeof title !== 'undefined') { %><%= title %><% } else { %><%= config.title %><% } %></title>
+
+		<% if(typeof notResponsive == 'undefined') { %><meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"><% } %>
+		<meta name="description" content="<% if (typeof description !== 'undefined') { %><%= description %><% } else { %><%= config.description %><% } %>">
+
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-XXXXXXXX-1', 'domain.com');
+			ga('send', 'pageview');
+
+			window.API = '<%= config.api_url %>';
+		</script>
+
+		<% if (typeof page_url !== 'undefined') { %>
+			<link href="<%= page_url %>" rel="canonical" />
+		<% } %>
+
+		<!-- Facebook -->
+		<meta property="og:title" content="<% if (typeof title !== 'undefined') { %> <%= title %> <% } else { %> <%= config.title %><% } %>"> 
+		<meta property="og:description" content="<% if (typeof description !== 'undefined') { %> <%= description %> <% } else { %> <%= config.description %><% } %>">
+		<meta property="og:type" content="website" />
+		<% if (typeof page_url !== 'undefined') { %>
+			<meta property="og:url" content="<%= page_url %>">
+		<% } else { %>
+			<meta property="og:url" content="<%= config.base_url %>">
+		<% } %>
+		<meta property="og:image" content="<%= config.social_thumbnail %>">
+		<meta property="og:image:width" content="500" />
+		<meta property="og:image:height" content="500" />
+		<meta property="fb:app_id" content="454088611354529">
+
+		<!-- Twitter -->
+		<meta name="twitter:title" content="<% if (typeof title !== 'undefined') { %> <%= title %> <% } else { %> <%= config.title %><% } %>">
+		<meta name="twitter:card" content="summary">
+		<% if (typeof page_url !== 'undefined') { %>
+			<meta property="twitter:url" content="<%= page_url %>">
+		<% } else { %>
+			<meta property="twitter:url" content="<%= config.base_url %>">
+		<% } %>
+		<meta name="twitter:description" content="<% if (typeof description !== 'undefined') { %> <%= description %> <% } else { %> <%= config.description %><% } %>">
+		<meta name="twitter:image" content="<%= config.social_thumbnail %>">
+		<meta name="twitter:creator" content="@FeedientApp">
+
+		<!-- Google+ -->
+		<meta itemprop="name" content="<% if (typeof title !== 'undefined') { %> <%= title %> <% } else { %> <%= config.title %><% } %>">
+		<meta itemprop="description" content="<% if (typeof description !== 'undefined') { %> <%= description %> <% } else { %> <%= config.description %><% } %>">
+		<meta itemprop="image" content="<%= config.social_thumbnail %>">

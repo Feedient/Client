@@ -1,0 +1,94 @@
+<div id="lightbox" class="facebook">
+	<div>
+		<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal">
+			<i class="fa fa-times"></i>
+		</a>
+		<div class="clear"></div>
+	</div>
+	<div class="lightbox-image">
+		<div class="loading"></div>
+		<a href="{{imageURL}}" target="_blank"><img src="" alt="" id="lightbox-image" style="display:none;opacity:0;"></a>
+	</div>
+
+	<div class="post">
+		<div class="left">
+			<a href="http://facebook.com/{{from.id}}" class="avatar" target="_blank">
+				<img src="https://graph.facebook.com/{{from.id}}/picture?access_token={{provider.providerTokens.accessToken}}" alt="{{from.name}}">
+			</a>
+
+			<a href="http://facebook.com/{{facebookFormatId id}}" target="_blank" class="time" data-timestamp="{{created_time}}">{{timeFormat created_time}}</a>
+		</div>
+		
+		{{#unless story}}
+			<div class="names">
+				<a href="http://facebook.com/{{from.id}}" class="name" target="_blank">
+					{{from.name}}
+				</a>
+
+				{{#if to}}				
+					{{#each to.data}}
+						{{#ifNotInTagsArray this.id ../with_tags.data ../message_tags}}
+							<i class="fa fa-caret-right"></i>
+							<a href="http://facebook.com/{{id}}" class="name" target="_blank">
+								{{name}}
+							</a>
+						{{/ifNotInTagsArray}}
+					{{/each}}
+				{{/if}}
+			</div>
+		{{/unless}}
+
+		{{#if story}}
+			<div class="context">{{story}}</div>
+		{{else}}
+			{{#if message}}
+				<div class="message">
+					{{#if message}}
+						{{{facebookText message message_tags}}}
+					{{else}}
+						{{{facebookText description undefined}}}
+					{{/if}}
+	
+					{{#if with_tags}}
+						<span class="facebook-with">
+							– with
+							{{#each with_tags.data}}
+								<a href="http://facebook.com/{{id}}" class="name" target="_blank">
+									{{name}}
+								</a>{{#ifNotLastItem this ../with_tags.data}},{{/ifNotLastItem}} 
+							{{/each}}
+						</span>
+					{{/if}}
+				</div>
+			{{/if}}
+		{{/if}}
+
+		{{#ifEquals status_type 'added_photos'}}
+			{{> facebookPhoto}}
+		{{/ifEquals}}
+
+		{{#ifEquals status_type undefined type 'photo' story undefined}}
+			{{> facebookPhoto}}
+		{{/ifEquals}}
+
+		{{#ifEquals status_type 'mobile_status_update' type 'photo'}}
+			{{> facebookPhoto}}
+		{{/ifEquals}}
+
+		{{#ifEquals status_type 'shared_story' type 'photo'}}
+			{{> facebookSharedPhoto}}
+		{{/ifEquals}}
+
+		{{#ifContains story 'profile picture'}}
+			{{> facebookTaggedInPhoto}}
+		{{/ifContains}}
+
+		{{#ifContains story 'cover photo'}}
+			{{> facebookTaggedInPhoto}}
+		{{/ifContains}}
+
+		{{#ifEquals status_type 'tagged_in_photo'}}
+			{{> facebookTaggedInPhoto}}
+		{{/ifEquals}}
+	</div>
+</div>

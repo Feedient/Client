@@ -1,0 +1,72 @@
+.action-button {
+	padding:8px;
+	background-color:#ccc;
+	color:#333 !important;
+	border-radius:4px;
+	display:inline-block;
+	border:2px solid #ccc;
+	.transition();
+
+	&:hover {
+		background-color:transparent;
+		border-color:@primaryColor;
+		color:@primaryColor !important;
+	}
+}
+
+#compose-text, #reply-text {
+	display:block;
+	height:60px;
+}
+
+#compose-form {
+	margin:0px;
+
+	textarea {
+		display:block;
+		width:440px;
+		max-width:440px; /* to prevent the user-resizing from going out of the box */
+		height:60px;
+	}
+
+	.bottom {
+		margin-top:15px;
+	}
+}
+
+#compose-accounts {
+	margin-bottom:15px;
+
+	.toggle-button {
+		color:#fff;
+		float:left;
+		padding:6px 10px;
+		font-weight:bold;
+		border-radius:3px;
+		border:2px solid;
+		margin-right:5px;
+		margin-bottom:5px;
+		.transition();
+
+		&:hover {
+			color:#fff;
+		}
+	}
+
+}
+
+#attach-photo {
+	display:block;
+	padding-top:10px;
+	color:#666;
+}
+
+#compose-error {
+	margin-top:20px;
+	color:#333;
+	display:none;
+
+	i {
+		margin-right:5px;
+	}
+}

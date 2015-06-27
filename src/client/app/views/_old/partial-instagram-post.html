@@ -1,0 +1,16 @@
+<div class="left">
+	<a href="http://instagram.com/{{user.username}}" class="avatar" target="_blank">
+		<img src="{{user.profile_picture}}" alt="{{user.username}}">
+	</a>
+
+	<a href="{{link}}" class="time" target="_blank" data-timestamp="{{created_time}}">{{timeFormat created_time}}</a>
+</div>
+
+<a href="http://instagram.com/{{user.username}}" class="name" target="_blank">
+	{{user.full_name}}
+</a>
+
+<div class="message">
+	{{caption.text}}
+	<img src="{{images.low_resolution.url}}"/>
+</div>

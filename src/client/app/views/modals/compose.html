@@ -1,0 +1,33 @@
+<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal"><i class="fa fa-times"></i></a>
+<h1>{{i18n "general:compose.header" }}</h1>
+
+<form id="compose-form" onSubmit="app.lib.ui.compose.submit(); return false;" enctype="multipart/form-data">
+	<label for="">{{i18n "general:compose.postTo1" }}<span id="selected-count">{{count}}</span> {{i18n "general:compose.postTo2" }}</label>
+	<div id="compose-accounts">
+		{{#each userProviders}}
+			{{#unless hidden}}
+				<a href="javascript:void(0)" class="toggle-button {{providerName}}-toggle {{#if disabled}}toggle-off{{/if}}" onClick="app.lib.ui.compose.toggleProvider('{{_id}}', '{{providerName}}', this)" data-providerId="{{_id}}"><i class="{{icon}}"></i> {{name}}</a>
+			{{/unless}}
+		{{/each}}
+		<div class="clear"></div>
+	</div>
+
+	<label for="">{{i18n "general:compose.messageHeader" }}</label>
+	<textarea id="compose-text" autofocus></textarea>
+
+	<div class="bottom">
+		<div class="right">
+			<a href="javascript:void(0)" onClick="app.lib.ui.compose.submit()" class="button right" id="compose-submit-button">{{i18n "general:compose.messageButton" }}</a>
+			<div id="special-compose-area" class="right"></div>
+			<div class="clear"></div>
+		</div>
+		<div id="attach-photo">
+			<input type="file" name="pictures[]" id="compose-picture-upload"/>
+		</div>
+		<div id="compose-error">
+			<i class="fa fa-warning"></i>
+			<span id="compose-error-message">...</span>
+		</div>
+		<div class="clear"></div>
+	</div>
+</form>

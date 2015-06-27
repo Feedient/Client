@@ -1,0 +1,16 @@
+<div id="lightbox" class="feedient-{{providerName}}">
+	<div>
+		{{#if videoSource}}
+			<!-- Todo: HTML5-video goes here, if necessary -->
+		{{else}}
+			{{{videoHTML}}}
+		{{/if}}
+	</div>
+	<div class="post">
+		<a class="title" href="{{link}}">{{title}}</a>
+		{{#if viewCount}}
+			<div class="view-count">{{viewCount}} {{i18n 'youtube:views'}}</div>
+		{{/if}}
+		<div class="message">{{formatVideoDescription description entities 1}}</div>
+	</div>
+</div>

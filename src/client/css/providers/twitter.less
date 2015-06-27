@@ -1,0 +1,140 @@
+@twitterColor:#0084b4;
+
+#twitter-pushout {
+	form {
+		padding:20px;
+	}
+}
+
+.pushout-replies {
+	border-top:1px solid @border;
+}
+
+.pushout-replies .post .actions, .pushout-parents .post .actions {
+	display:block !important;
+}
+
+.pushout-column .active-post section.twitter-stats {
+	padding-bottom:0px !important;
+	display:block;
+	clear:both;
+	padding-bottom:15px;
+	font-size:12px;
+	padding-top:15px;
+
+	a {
+		color:#686868;
+		margin-right:10px;
+	}
+}
+
+.feedient-twitter {
+	h1, a, .link-placeholder {
+		color:@twitterColor;
+	}
+
+	a:hover {
+		color:darken(@twitterColor, 15%);
+	}
+
+	.post {
+		.expand-button { display:block; }
+
+		.message {
+			min-height:60px;
+		}
+
+		&.active-post, &:hover {
+			.actions {
+				a {
+					color:@twitterColor;
+				}
+			}
+		}
+
+		.twitter-stats {
+			display:none;
+		}
+	}
+	
+	.color-favorited {
+		color:#ff9600 !important;
+	}
+
+	.color-retweeted {
+		color:@primaryColor !important;
+	}
+	
+	.pushout-actions {
+		.color-favorited {
+			border-color:#ff9600 !important;
+			background-color:#ff9600 !important;
+			color:#fff !important;
+
+			&:hover {
+				color:#ff9600 !important;
+				background-color:transparent !important;
+			}
+		}
+
+		.color-retweeted {
+			border-color:@primaryColor !important;
+			background-color:@primaryColor !important;
+			color:#fff !important;
+
+			&:hover {
+				color:@primaryColor !important;
+				background-color:transparent !important;
+			}
+		}
+	}
+}
+
+.twitter-color {
+	color:@twitterColor;
+}
+
+.button.feedient-twitter-button {
+	background-color:@twitterColor;
+	border-color:@twitterColor;
+	text-align:left;
+
+	&:hover {
+		color:@twitterColor;
+	}
+}
+
+.twitter-special-compose {
+	color:#999;
+	float:right;
+	padding:10px;
+	padding-left:0px;
+
+	i {
+		color:@twitterColor;
+	}
+}
+
+#compose-accounts .toggle-off {
+		background-color:transparent !important;
+		border-color:#999 !important;
+		color:#999 !important;
+}
+
+#compose-accounts .twitter-toggle {
+	background-color:@twitterColor;
+	border-color:@twitterColor;
+
+	&:hover {
+		background-color:darken(@twitterColor, 15%);
+		border-color:darken(@twitterColor, 15%);
+	}
+
+	&.toggle-off {
+		color:@twitterColor;
+
+		&:hover {
+			border-color:@twitterColor;
+		}
+	}
+}

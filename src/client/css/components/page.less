@@ -1,0 +1,80 @@
+.box, .column {
+	display:inline-block;
+	vertical-align:top;
+	overflow:hidden;
+	height:100%;
+	position:relative;
+	width:@columnWidth;
+	border-right:1px solid @border;
+	font-size:@fontSize;
+	white-space:normal;
+	background-color:#fff;
+
+	h1 {
+		height:46px;
+		border-bottom:1px solid @border;
+		font-size:26px;
+		font-weight:200;
+		padding-top:16px;
+		
+		i {
+			font-size:28px;
+			padding-right:10px;
+			padding-left:20px;
+		}
+	}
+
+	h2 {
+		font-size:18px;
+		font-weight:200;
+		margin-bottom:10px;
+		color:#666;
+	}
+
+	.content {
+		padding:20px;
+		line-height:1.5;
+		color:#333;
+	}
+
+	.button-group {
+		margin-bottom:10px;
+		text-align:left;
+	}
+}
+
+.box, .column, #modal, #ads {
+	.button {
+		background-color:@primaryColor;
+		border:2px solid @primaryColor;
+		padding:8px 15px;
+		border-radius:4px;
+		color:#fff;
+		text-align:center;
+		display:block;
+		font-weight:bold;
+		cursor:pointer;
+		font-family:@fontFamily;
+		font-size:16px;
+		.transition();
+
+		&:hover {
+			background-color:#fff;
+			color:@primaryColor;
+		}
+
+		&.active {
+			background-color:#fff;
+			color:@primaryColor;
+
+			i {
+				float:right;
+				padding-top:4px;
+
+				&:before {
+					content:"\f054";
+				}
+			}
+		}
+	}
+}

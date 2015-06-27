@@ -1,0 +1,21 @@
+<div id="lightbox" class="feedient-{{provider.providerName}}">
+	<div id="lightbox-left-side">
+		{{#if imageURL}}
+			<div class="lightbox-image">
+				<a href="{{ imageURL }}" target="_blank">
+					<img src="" alt="" id="lightbox-image" style="display:none;opacity:0;">
+				</a>
+			</div>
+		{{else}}
+			<iframe id="lightbox-video" allowfullscreen frameborder="0" style="display:none;opacity:0;"></iframe>
+		{{/if}}
+	</div>
+	
+	<div id="lightbox-right-side">
+		<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal"><i class="fa fa-times"></i></a>
+		
+		{{{ postView }}}
+	</div>
+
+	<div class="clear"></div>
+</div>

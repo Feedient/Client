@@ -1,0 +1,71 @@
+app.config = {
+
+	// Log level, between 0-3 where 3 is all messages and 0 is none
+	logLevel: 3,
+
+	autoLoad: {
+		// Core => app.core.*
+		core: [
+			'/shared/js/zeus/hooks',
+			'/shared/js/zeus/log',
+			'/shared/js/zeus/view',
+			'/shared/js/zeus/router',
+			'/shared/js/zeus/api'
+		],
+		
+		// Libraries => app.lib.*
+		lib: [
+			'app/libraries/user',
+			'app/libraries/metrics'
+		],
+
+		// Helpers => app.helpers.*
+		helpers:  {
+			initialize: false,
+			files: [
+				'app/helpers/timeAgo',
+				'app/helpers/formatNumber'
+			]
+		},
+
+		// Controllers => app.core.router.get(...)
+		controllers: {
+			initialize: false,
+			files: [
+				'app/controllers/index',
+				'app/controllers/404'
+			]
+		},
+
+		setup: {
+			initialize: false,
+			files: [
+				'app/setup'
+			]
+		}
+	},
+
+	// Optionally preload common views
+	preloadViews: [
+		'index',
+		'blocks/metrics'
+	],
+
+	// Optionally preload common partials
+	preloadViewPartials: {
+		// listItem: 'partials/list-item'
+	},
+
+	// Path without trailing slash
+	path: '/admin',
+
+	// View engine settings
+	viewEngine: {
+		defaultSelector: '#main',
+		fileExtension: 'html',
+		parallelLimit: 5,
+	},
+
+	// API server URL
+	API: '<%= config.api_url %>'
+};

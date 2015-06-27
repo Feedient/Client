@@ -1,0 +1,37 @@
+{{#each notifications}}
+	<a {{#if provider.openExternal}}href="{{link}}" target="_blank"{{else}}href="javascript:void(0)" data-id="{{id}}" data-provider="{{provider.id}}"{{/if}} class="post feedient-{{provider.providerName}} {{#if read}}{{else}}new-notification{{/if}}">
+		<div class="left">
+			<span class="avatar" target="_blank">
+				<img src="{{user_from.image}}" alt="{{user_from.name}}">
+			</span>
+
+			<span class="time" target="_blank">
+				{{timeFormat created_time}}
+			</span>
+		</div>
+
+		{{#if provider.openExternal}}
+			<div class="right">
+				<i class="fa fa-external-link"></i>
+			</div>
+		{{/if}}
+
+		<span class="name link-placeholder" target="_blank">
+			<span class="real-name">{{user_from.name}}</span>
+			
+			{{#if user_from.name_formatted}}
+				<span class="username">{{user_from.name_formatted}}</span>
+			{{/if}}
+		</span>
+
+		<span class="message">
+			{{formatNotification content.message}}
+		</span>
+
+		<div class="provider {{provider.providerName}}-color">
+			<i class="{{provider.icon}}"></i> {{provider.name}}
+		</div>
+
+		<div class="clear"></div>
+	</a>
+{{/each}}

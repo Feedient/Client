@@ -1,0 +1,115 @@
+<div class="column" style="width:260px;">
+	<h1><i class="fa fa-group"></i> {{i18n 'general.settings.accounts' }}</h1>
+	<div class="posts auto-scroll">
+		{{#if providers.length}}
+			<ul class="settings-list">
+				{{#each providers}}
+					<li class="{{providerName}}-color" id="settings-provider-{{_id}}">
+						<div class="right">
+							<a href="javascript:void(0)" onClick="app.controller.toggleRemoveOverlay(this)">
+								<i class="fa fa-times"></i>
+							</a>
+						</div>
+						<i class="{{icon}}"></i> 
+						{{name}}
+						<div class="confirm-deletion">
+							{{i18n 'general.settings.disconnect' }}&nbsp; <span class="{{providerName}}-color"><i class="{{icon}}"></i> {{name}}</span>
+							<div class="deletion-options">
+								<a href="javascript:void(0)" onClick="app.controller.removeProvider('{{_id}}')"><i class="fa fa-check"></i> {{i18n 'general.yes' }}</a>
+								<a href="javascript:void(0)" onClick="app.controller.toggleRemoveOverlay(this)"><i class="fa fa-times"></i> {{i18n 'general.no' }}</a>
+							</div>
+						</div>
+					</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+
+		<div class="content">
+			<a href="javascript:void(0)" onClick="app.controller.toggleAddAccount()" class="button" id="settings-add-provider-button">
+				<i class="fa fa-plus"></i> {{i18n 'general.settings.addAccount' }}
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="column pushout-column" id="settings-add-provider-pushout">
+	<div class="posts auto-scroll full-height">
+		<div class="content" style="width:134px;">
+			<h2>{{i18n 'general.settings.addAccount' }}</h2>
+
+			{{#each availableProviders}}
+				<a href="javascript:void(0)" onClick="{{#if disabled}}app.lib.ui.modal.show('modals/under-development-modal', { feature: '{{formattedName}}' });{{else}}app.lib.providers.authorize('{{name}}'){{/if}}" class="button button-group feedient-{{name}}-button" style="width:100px;{{#if disabled}}opacity:0.3;{{/if}}">
+				<i class="{{icon}}"></i> {{formattedName}}
+				</a>
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="column">
+	<h1><i class="fa fa-cog"></i> {{i18n 'general.settings.FeedientAccount' }}</h1>
+	<div class="posts auto-scroll">
+		<div class="content">
+			<form action="" style="margin-bottom:0px;">
+				<label for"language">{{i18n 'general.settings.language.label'}}</label>
+
+				<a class="select" id="select-language">
+					{{#each languages}}
+						<div class="option {{#ifEquals @key ../currentLanguage}}selected{{/ifEquals}}" data-value="{{@key}}">
+							<i class="flag {{@key}}"></i> {{#if name}}{{name}}{{else}}{{this}}{{/if}}
+						</div>
+					{{/each}}
+				</a>
+				
+				<script>
+					$(document).ready(function() {
+						$('#select-language').off('change');
+						$('#select-language').selectField();
+						$('#select-language').on('change', function(e, value) {
+							app.controller.changeLanguage(value);
+						});
+					});
+				</script>
+			</form>
+
+			<div class="alert alert-success hidden" id="language-settings-success">
+				<i class="fa fa-check-circle"></i> {{i18n 'general.settings.updated_language'}}
+			</div>
+		</div>
+		<div class="content-divider"></div>
+		<div class="content">
+			<form onSubmit="return app.controller.submitAccountSettings()">
+				<label for="email">{{i18n 'general.settings.email' }}</label>
+				<input type="email" name="email" id="email" value="{{email}}">
+
+				<label for="old-password">{{i18n 'general.settings.password.current' }}</label>
+				<input type="password" name="old-password" id="old-password" onblur="app.controller.validation.oldPassword($(this))">
+
+				<label for="password">{{i18n 'general.settings.password.new' }}</label>
+				<input type="password" name="password" id="password" onblur="app.controller.validation.password($(this))">
+
+				<label for="password2">{{i18n 'general.settings.password.repeat' }}</label>
+				<input type="password" name="password2" id="password2" onblur="app.controller.validation.password2($(this))">
+
+				<input type="submit" class="button" value="{{i18n 'general.settings.password.button' }}">
+			</form>
+
+			<div class="alert alert-success hidden" id="account-settings-success">
+				<i class="fa fa-check-circle"></i> {{i18n 'general.settings.updated'}}
+			</div>
+
+			<div class="alert alert-success hidden" id="account-settings-email-success">
+				<i class="fa fa-envelope"></i> Please check <span class="email"></span> for a confirmation link.
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="column">
+	<h1><i class="fa fa-lock"></i> {{i18n 'general.settings.sessions.header' }}</h1>
+	<div class="posts auto-scroll">
+		<div id="active-sessions-content">
+			<div class="inline-loading"></div>
+		</div>
+	</div>
+</div>

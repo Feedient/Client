@@ -1,0 +1,44 @@
+<div class="session-info">
+    {{i18n 'general:settings.sessions.explanation' }}
+</div>
+
+<ul class="settings-list" id="session-list">
+	{{#each sessions}}
+		<li {{#if currentSession}}{{else}}class="not-current-session" data-token="{{token}}"{{/if}}>
+			<div class="right">
+				{{#if currentSession}}
+					<i class="fa fa-check-circle" style="color:#1ead91;"></i>
+				{{else}}
+					<a href="javascript:void(0)" onClick="app.controller.toggleRemoveOverlay(this)">
+						<i class="fa fa-times"></i>
+					</a>
+				{{/if}}
+			</div>
+			<div class="list-icon"><i class="fa fa-{{icon}}"></i></div>
+			<div style="float:left;">
+				<h3 style="font-size:16px;font-weight:normal;"><strong>{{platform}}</strong>, {{browser}}</h3>
+				<div style="color:#666;">
+					<div style="font-size:12px;margin-top:5px;float:left;margin-right:7px;">{{i18n 'general:settings.sessions.lastActive' }}{{timeFormat lastLogin}} </div>
+					<div style="font-size:12px;margin-top:5px;float:left;">{{ipAddress}}</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div class="confirm-deletion">
+				{{i18n 'general:settings.sessions.disconnect' }}
+				<div class="deletion-options">
+					<a href="javascript:void(0)" onClick="app.controller.removeSession('{{token}}', this)"><i class="fa fa-check"></i> {{i18n 'general:yes' }}</a>
+					<a href="javascript:void(0)" onClick="app.controller.toggleRemoveOverlay(this)"><i class="fa fa-times"></i> {{i18n 'general:no' }}</a>
+				</div>
+			</div>
+		</li>
+	{{/each}}
+</ul>
+
+{{#ifCond sessions.length '>' 1}}
+	<div class="content" id="clear-session-button-area">
+		<a href="javascript:void(0)" onclick="app.controller.clearSessions(this)" class="button secondary-button">
+			{{i18n 'general:settings.sessions.clear' }}
+		</a>
+	</div>
+{{/ifCond}}

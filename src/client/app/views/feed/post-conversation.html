@@ -1,0 +1,49 @@
+{{#unless noColumn}}<div class="feedient-{{provider.providerName}} {{provider.providerName}}-pushout">{{/unless}}
+	<div id="{{#if elementId}}{{elementId}}{{else}}pushout{{/if}}-parents-{{ provider.id }}-{{ postData.id }}" class="pushout-parents">
+		{{#if postData.content.is_conversation}}
+			<div class="inline-loading"></div>
+
+			{{#if postData.content.is_conversation}}
+				<div style="border-bottom: 1px solid #e1e1e1;"></div>
+			{{/if}}
+		{{/if}}
+	</div>
+
+	{{{post}}}
+
+	<div class="pushout-actions" id="pushout-{{ provider.id }}-{{postData.id}}">
+		{{#each provider.actions.list}}
+			{{#if performed_key}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.{{method}}('{{../../postData.id}}', this, true)" class="{{method}}-button {{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}color-{{performed_key}}{{/ifValueIsTrue}}">
+					<i class="{{icon}}"></i>
+					{{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}
+						{{text.performed}}
+					{{else}}
+						{{text.normal}}
+					{{/ifValueIsTrue}}
+				</a>
+			{{/if}}
+		{{/each}}
+	</div>
+
+	<div class="pushout-actions" id="{{#if elementId}}{{elementId}}{{else}}pushout{{/if}}-{{ provider.id }}-{{postData.id}}-action-count" style="display:none;"></div>
+
+	<form onSubmit="app.lib.user.getProvider('{{ provider.id }}').actions.submitReply('{{ postData.id }}')" style="padding:20px;">
+		<textarea id="reply-text-{{ provider.id }}-{{ postData.id }}" placeholder="Reply to {{ postData.user.name_formatted }}" onFocus="app.lib.user.getProvider('{{provider.id}}').specialCompose.focusReplyField(this, '{{postData.id}}');" onBlur="app.lib.user.getProvider('{{provider.id}}').specialCompose.focusReplyField(this, '{{postData.id}}');"></textarea>
+		<div class="bottom">
+			<div class="right">
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{ provider.id }}').actions.submitReply('{{ postData.id }}')" class="button right">Submit reply</a>
+				<div id="special-compose-area-{{ provider.id }}-{{ postData.id }}" class="right"></div>
+				<div class="clear"></div>
+			</div>
+			<!--<a href="javascript:void(0)" onclick="app.lib.ui.compose.attachPhoto()" class="action-button"><i class="fa fa-camera"></i></a>-->
+			<div class="clear"></div>
+			<div id="reply-loading-{{ provider.id }}-{{ postData.id }}" class="inline-loading" style="display:none;"></div>
+			<!--<div id="unsupported-photo"><i class="fa fa-warning"></i> {{i18n 'general:compose.photo' }}</div>-->
+		</div>
+	</form>
+
+	<div id="{{#if elementId}}{{elementId}}{{else}}pushout{{/if}}-replies-{{ provider.id }}-{{ postData.id }}" class="pushout-replies">
+		<div class="inline-loading"></div>
+	</div>
+{{#unless noColumn}}</div>{{/unless}}

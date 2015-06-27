@@ -1,0 +1,118 @@
+@keyframes fadeIn {
+	from { opacity:0; margin-top:-50px; }
+	to { opacity:1; margin-top:-33px; }
+}
+
+@-webkit-keyframes fadeIn {
+	from { opacity:0; margin-top:-50px; }
+	to { opacity:1; }
+}
+
+@-moz-keyframes fadeIn {
+	from { opacity:0; margin-top:-50px; }
+	to { opacity:1; }
+}
+
+@-o-keyframes fadeIn {
+	from { opacity:0; margin-top:-50px; }
+	to { opacity:1; }
+}
+
+.session-info {
+	padding:16px 20px;
+	border-bottom:1px solid @border;
+	line-height:1.5;
+	font-size:14px;
+}
+
+.settings-list {
+	li {
+		display:block;
+		padding:16px 20px;
+		font-size:14px;
+		border-bottom:1px solid @border;
+		font-weight:bold;
+		
+		.list-icon {
+			float:left;
+			font-size:32px;
+			margin-right:10px;
+		}
+
+		i {
+			padding-right:10px;
+		}
+
+		a {
+			color:#999;
+
+			&:hover {
+				color:red;
+			}
+		}
+	}
+
+	.right {
+		i {
+			padding:0px;
+		}
+	}
+
+	.confirm-deletion {
+		font-size:12px;
+		color:#333;
+		position:absolute;
+		width:260px;
+		background-color:#fff;
+		height:44px;
+		margin-left:-20px;
+		margin-top:-33px;
+		padding-top:5px;
+		text-align:center;
+		opacity:0;
+		display:none;
+
+		&.show-deletion {
+			opacity:1;
+			display:block;
+			animation:fadeIn 0.3s;
+			-webkit-animation:fadeIn 0.3s;
+			-moz-animation:fadeIn 0.3s;
+			-o-animation:fadeIn 0.3s;
+		}
+
+		.deletion-options {
+			margin-top:5px;
+		}
+
+		i {
+			padding:0px;
+		}
+
+		a {
+			display:inline-block;
+			margin-left:5px;
+			margin-right:5px;
+			.transition();
+
+			&:first-child {
+				color:green;
+			}
+
+			&:last-child {
+				color:red;
+			}
+
+			&:hover {
+				color:#000;
+			}
+		}
+	}
+}
+
+#session-list .confirm-deletion {
+	width:400px;
+	padding-top:18px;
+	height:52px;
+	margin-top:-55px;
+}

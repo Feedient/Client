@@ -1,0 +1,143 @@
+{
+	"config": {
+		"title": "Feedient - All of your social life in one place",
+		"description": "Gather your social networks in one place. Feedient makes it easy to stay up to date with your friends, even if they are on different social networks.",
+		"keywords": "social network,social,aggregation,overview,facebook,twitter,instagram,youtube,all in one,feedient",
+		"social_thumbnail": "http://test.feedient.com/images/social.jpg",
+		"api_url": "http://test.api.feedient.com",
+		"base_url": "http://test.feedient.com",
+		"providers": {
+			"twitter": { "callback_url": "http://test.feedient.com/app/callback/twitter", "app_id": "INSERT YOUR API APP ID HERE" },
+			"facebook": { "callback_url": "http://test.feedient.com/app/callback/facebook", "app_id": "INSERT YOUR API APP ID HERE" },
+			"instagram": { "callback_url": "http://test.feedient.com/app/callback/instagram", "app_id": "INSERT YOUR API APP ID HERE" },
+			"youtube": { "callback_url": "http://test.feedient.com/app/callback/youtube", "app_id": "INSERT YOUR API APP ID HERE" },
+			"tumblr": { "callback_url": "http://test.feedient.com/app/callback/tumblr", "app_id": "INSERT YOUR API APP ID HERE" },
+			"rss": { }
+		},
+		"inviteOnly": false,
+		"ads": true
+	},
+
+	"views": [
+		{
+			"input": "src/frontpage/index.ejs",
+			"output": "build/frontpage/index.html",
+			"data": {
+				"testimonials": [
+					{
+						"picture": "/images/quotes/sebastian.jpg",
+						"author": "Sebastian Ryge",
+						"message": "Feedient is a brilliant timesaving way for me to interact with all my social networks."
+					},
+
+					{
+						"picture": "/images/quotes/philip.jpg",
+						"author": "Philip Wallin",
+						"message": "Feedient makes it easy to organize all my social networks."
+					},
+
+					{
+						"picture": "/images/quotes/sarushan.jpg",
+						"author": "Sarushan Vamathevan",
+						"message": "This is one of the far most practical applications on the web for every day users, I love it!"
+					}
+				]
+			}
+		},
+
+		{
+			"input": "src/frontpage/404.ejs",
+			"output": "build/frontpage/404.html",
+			"data": {
+				"title": "Page not found - Feedient",
+				"description": "Page not found"
+			}
+		},
+
+		{
+			"input": "src/frontpage/about.ejs",
+			"output": "build/frontpage/about.html",
+			"data": {
+				"title": "About - Feedient",
+				"description": "Feedient is a web application which combines all your social network feeds into one simple overview."
+			}
+		},
+
+		{
+			"input": "src/frontpage/contact.ejs",
+			"output": "build/frontpage/contact.html",
+			"data": {
+				"title": "Contact - Feedient",
+				"description": "Contact us for support, press inqueries and other questions."
+			}
+		},
+
+		{
+			"input": "src/frontpage/legal.ejs",
+			"output": "build/frontpage/legal.html",
+			"data": {
+				"title": "Legal - Feedient",
+				"description": "Legal terms for using our service."
+			}
+		},
+
+		{
+			"input": "src/frontpage/press.ejs",
+			"output": "build/frontpage/press.html",
+			"data": {
+				"title": "Press - Feedient",
+				"description": "Official announcements and press resources."
+			}
+		},
+		{
+			"input": "src/frontpage/privacy.ejs",
+			"output": "build/frontpage/privacy.html",
+			"data": {
+				"title": "Privacy policy - Feedient",
+				"description": "Privacy policy for Feedient."
+			}
+		},
+
+		{
+			"input": "src/frontpage/recover.ejs",
+			"output": "build/frontpage/recover.html"
+		},
+
+		{
+			"input": "src/frontpage/confirm_email.ejs",
+			"output": "build/frontpage/confirm_email.html"
+		},
+
+		{
+			"input": "src/client/index.ejs",
+			"output": "build/client/index.html",
+			"data": {
+				"page_url": "http://feedient.com/app/",
+				"title": "Feedient",
+				"notRoot": true,
+				"notResponsive": true
+			}
+		},
+
+		{
+			"input": "src/client/app/config.ejs",
+			"output": "build/client/app/config.js",
+			"data": {
+				"hashes": { "loadFile": "build/client/hashes.json" }
+			}
+		},
+
+		{
+			"input": "src/frontpage/robots.ejs",
+			"output": "build/frontpage/robots.txt",
+			"data": {
+				"public": false
+			}
+		},
+
+		{
+			"input": "src/admin/app/config.ejs",
+			"output": "build/admin/app/config.js"
+		}
+	]
+}

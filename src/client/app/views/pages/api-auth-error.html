@@ -1,0 +1,11 @@
+<div class="box" style="width:440px;">
+	<h1><i class="fa fa-ban"></i> Authorization error</h1>
+	<div class="content">You are not authorized to access this page.</div>
+</div>
+
+<script>
+	setTimeout(function() {
+		$.removeCookie('token', { path: '/' });
+		window.location = '/';
+	}, 1500);
+</script>

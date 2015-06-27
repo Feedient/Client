@@ -1,0 +1,8 @@
+{{#each results}}
+	<li>
+		<a href="javascript:void(0)" {{#if first}}class="selected"{{/if}} data-feed="{{feedId}}">
+			<img src="{{visualUrl}}" alt="{{title}}">
+			<h3>{{title}}</h3>
+		</a>
+	</li>
+{{/each}}

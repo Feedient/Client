@@ -1,0 +1,49 @@
+// Configuration
+@fontFamily: Segoe UI, Helvetica Neue, Helvetica, sans-serif;
+@border: #e1e1e1;
+@text: #303030;
+@lightText: #bababa;
+@grayText: #9b9b9b;
+@primaryColor: #1ead91;
+@columnWidth: 400px;
+@fontSize: 14px;
+
+.transition (@time: 0.3s) {
+	transition:@time all;
+	-webkit-transition:@time all;
+	-moz-transition:@time all;
+	-ms-transition:@time all;
+	-o-transition:@time all;
+}
+
+.customTransition (@string) {
+	transition:@string;
+	-webkit-transition:@string;
+	-moz-transition:@string;
+	-ms-transition:@string;
+	-o-transition:@string;
+}
+
+// Import all files
+@import 'components/general';
+@import 'components/menu';
+@import 'components/grid';
+@import 'components/post';
+@import 'components/page';
+@import 'components/form';
+@import 'components/modal';
+@import 'components/toast';
+@import 'components/compose';
+@import 'components/lightbox';
+@import 'components/scrollbar';
+@import 'components/settings';
+@import 'components/flags';
+@import 'components/feedback';
+@import 'components/notifications';
+@import 'components/announcement';
+@import 'providers/twitter';
+@import 'providers/facebook';
+@import 'providers/youtube';
+@import 'providers/instagram';
+@import 'providers/tumblr';
+@import 'providers/rss';

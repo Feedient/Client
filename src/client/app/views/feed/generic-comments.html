@@ -1,0 +1,34 @@
+{{#each comments}}
+	{{#if content}}
+		<div class="comment">
+			<a href="{{user.profile_link}}" target="_blank" class="avatar" target="_blank">
+				<img src="{{user.image}}" alt="{{user.name}}">
+			</a>
+		
+			<div class="comment-content">
+				<div class="comment-footer">
+					<!--{{#if like_count}}<span><i class="fa fa-thumbs-up"></i> {{like_count}}</span>{{/if}}-->
+					<span><i class="fa fa-clock-o"></i> {{timeFormat content.date_created}}</span>
+				</div>
+				<a href="{{user.profile_link}}" target="_blank" class="comment-author">
+				{{#if user.name_formatted}}
+					{{user.name_formatted}}
+				{{else}}
+					{{user.name}}
+				{{/if}}
+				</a>
+
+				{{content.message}}
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	{{/if}}
+{{/each}}
+
+{{#if has_more_comments}}
+	<div class="more-comments">
+		<div class="comment-divider"></div>
+		<a href="{{ post_link }}" target="_blank" class="button show-all-comments"><i class="fa fa-external-link"></i> Show all comments</a>
+	</div>
+{{/if}}

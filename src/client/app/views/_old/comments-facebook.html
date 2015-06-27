@@ -1,0 +1,22 @@
+{{#each comments}}
+	{{#if message}}
+		<div class="facebook-comment">
+			<a href="http://facebook.com/{{from.id}}" class="avatar" target="_blank">
+				<img src="https://graph.facebook.com/{{from.id}}/picture?access_token={{../../provider.providerTokens.accessToken}}" alt="{{from.name}}">
+			</a>
+		
+			<div class="comment-content">
+				<a href="http://facebook.com/{{from.id}}" class="comment-author">{{from.name}}</a>
+
+				{{message}}
+
+				<div class="comment-footer">
+					{{#if like_count}}<span><i class="fa fa-thumbs-up"></i> {{like_count}}</span>{{/if}}
+					<span><i class="fa fa-clock-o"></i> {{timeFormat created_time}}</span>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	{{/if}}
+{{/each}}

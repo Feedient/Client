@@ -1,0 +1,18 @@
+ï»¿{
+    "conversation": "Conversation",
+	"details": "Afficher les d&eacute;tails",
+	"retweeted": "retweet&eacute;",
+	"retweetsCAPS": "RETWEETS",
+	"favoritesCAPS": "FAVORIS",
+	"retweeted": "Retweet&eacute;",
+	"retweet": "Retweeter",
+	"favorite": "Favoriser",
+	"favorited": "Mis en Favoris",
+	"tweet": "Tweeter",
+	"confirmRetweet": {
+        "header": "Retweeter",
+        "confirm": "Êtes-vous sûr de vouloir retweeter ce tweet?",
+        "cancel": "Annuler",
+        "retweet": "Retweeter"
+    }
+}

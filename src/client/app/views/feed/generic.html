@@ -1,0 +1,185 @@
+{{#each posts}}
+	<article class="post {{#if ../animated}}animated-post{{/if}}" id="post-{{../provider._id}}-{{id}}{{#if ../isConversation}}-conversation{{/if}}">
+		<div class="special"></div>
+		
+		{{! Display context ABOVE the message, only for ones that provide user information }}
+		{{#ifCond content.action.type '!=' 'to_user'}}
+			{{#if content.action.user}}
+				<div class="context">
+					<i class="{{actionInfo ../../../provider._id content.action.type 'icon'}}"></i> <a href="{{content.action.user.profile_link}}" target="_blank">{{content.action.user.name}}</a> {{actionInfo ../../../provider._id content.action.type 'name'}}
+				</div>
+			{{/if}}
+		{{/ifCond}}
+
+		{{#if user.image}}
+			<div class="left {{#ifShouldBeSmallImage content.action content.message}}{{else}}small-avatar{{/ifShouldBeSmallImage}}">
+					<a href="{{user.profile_link}}" class="avatar" target="_blank">
+						<img src="{{user.image}}" alt="{{user.name}}">
+					</a>
+
+				{{#ifShouldBeSmallImage content.action content.message}}
+					<a {{#if post_link}}href="{{post_link}}"{{/if}} class="time" target="_blank" data-timestamp="{{content.date_created}}">{{timeFormat content.date_created}}</a>
+				{{/ifShouldBeSmallImage}}
+			</div>
+		{{/if}}
+
+		{{#unless user.image}}
+			<div class="right">
+				<a {{#if post_link}}href="{{post_link}}"{{/if}} class="time" target="_blank" data-timestamp="{{content.date_created}}" style="margin-top:0;">{{timeFormat content.date_created}}</a>
+			</div>
+		{{/unless}}
+
+		{{#ifShouldBeSmallImage content.action content.message}}{{else}}
+			{{#if user.image}}
+				<div class="right time-right">
+					<a {{#if post_link}}href="{{post_link}}"{{/if}} class="time" target="_blank" data-timestamp="{{content.date_created}}">{{timeFormat content.date_created}}</a>
+				</div>
+			{{/if}}
+		{{/ifShouldBeSmallImage}}
+
+		{{! User name}}
+		{{#ifShouldShowName content.action user}}
+			<a href="{{user.profile_link}}" class="name" target="_blank" {{#ifShouldBeSmallImage content.action content.message}}{{else}}{{#if user.image}}style="padding-top:5px;"{{/if}}{{/ifShouldBeSmallImage}}>
+				<span class="real-name">{{user.name}}</span>
+				
+				{{#if user.name_formatted}}
+					<span class="username">{{user.name_formatted}}</span>
+				{{/if}}
+			</a>
+
+			{{#unless content.action.message}}
+				{{#ifCond content.action.type '==' 'to_user'}}
+					<i style="margin-left:5px;margin-right:5px;" class="fa fa-caret-right"></i>
+					<a href="{{content.action.user.profile_link}}" class="name" target="_blank">
+						{{content.action.user.name}}
+					</a>
+				{{/ifCond}}
+			{{/unless}}
+			
+		{{/ifShouldShowName}}
+
+		{{! Display context }}
+		{{#ifShouldShowName content.action}}{{else}}
+			<div class="context" style="padding-top:5px;">
+				{{content.action.message}}
+			</div>
+		{{/ifShouldShowName}}
+
+		{{! Show place}}
+		{{#if content.entities.place.url}}
+			<a href="{{content.entities.place.url}}" class="feed-location" target="_blank">
+				<i class="fa fa-map-marker"></i> {{content.entities.place.name}}
+			</a>
+		{{/if}}
+		
+		{{#if content.title}}
+			<a href="{{#each content.entities.links}}{{expanded_url}}{{/each}}" target="_blank" class="title">{{content.title}}</a>
+		{{/if}}
+
+		{{#if content.message}}
+			<div class="message">
+				{{#if ../../provider.shouldFormatMessage}}
+					{{formatMessage content.message content.entities ../../provider._id ../id ../../expandText}}
+				{{else}}
+					{{safeParseMessage content.message}}
+				{{/if}}
+			</div>
+		{{/if}}
+
+		{{#if content.entities.extended_link}}
+			<a href="{{content.entities.extended_link.url}}" class="extended-link extended-link-wide" target="_blank">
+				{{#if content.entities.extended_link.image}}
+					<div class="link-thumbnail" style="background-image:url({{content.entities.extended_link.image}})"></div>
+				{{/if}}
+				<div class="link-title">{{content.entities.extended_link.name}}</div>
+				<span class="link-domain">{{getDomain content.entities.extended_link.url}}</span>
+				<div class="link-description">{{content.entities.extended_link.description}}</div>
+			</a>
+		{{/if}}
+
+		{{#if content.entities.videos}}
+			{{#each content.entities.videos}}
+			<div class="video-holder">
+				<a {{getVideoTarget url}} class="post-video" style="background-image:url({{image}})">
+					<i class="fa fa-play"></i>
+				</a>
+			</div>
+			{{/each}}
+		{{/if}}
+
+		{{#if content.entities.pictures}}
+			{{#ifCond content.entities.pictures.length '>' 1}}
+				<div class="post-multi-images">
+			{{/ifCond}}
+
+			{{#each content.entities.pictures}}
+				{{#unless ../../../hidePhotos}}
+					<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../../../provider._id}}').actions.lightbox('{{../../id}}', '{{parseLargePicture large_picture}}')" class="post-image" style="{{extractBackgroundImage small_picture}}"></a>
+				{{/unless}}
+				{{#ifEquals ../../content.entities.pictures.length 1}}
+					{{#if caption}}
+						<div class="context-image-description">{{formatMessage caption ../../../../content.entities ../../../../../provider._id ../../../id}}</div>
+					{{/if}}
+				{{/ifEquals}}
+			{{/each}}
+
+			{{#ifCond content.entities.pictures.length '>' 1}}
+				</div>
+			{{/ifCond}}
+		{{/if}}
+
+		{{! Youtube mainly}}
+		{{#if content.entities.extended_video}}
+			{{#unless ../../hidePhotos}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../../provider._id}}').actions.lightbox('{{id}}')" class="post-image"  style="background-image:url({{content.entities.extended_video.thumbnail}})"><i class="fa fa-play"></i></a>
+			{{/unless}}
+			<a href="{{content.entities.extended_video.link}}" class="title" target="_blank">{{content.entities.extended_video.title}}</a>
+
+			{{! Don't show count in lightbox, it will be shown separately}}
+			{{#unless ../../hidePhotos}}
+				<div class="view-count">{{content.action_counts.views}} {{i18n 'youtube:views'}}</div>
+			{{/unless}}
+			
+			<div class="message">
+				{{formatVideoDescription content.entities.extended_video.description content.entities ../../hidePhotos}}
+			</div>
+		{{/if}}
+		
+		{{#unless ../hideActions}}
+			<section class="actions">
+				<div class="right">
+					{{#each ../../provider.actions.list }}
+					
+						{{! Tumblr requires more data) }}
+						{{#if ../../tumblr.reblog_key}}
+							<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../../../provider._id}}').actions.{{method}}('{{../../id}}', '{{../../tumblr.reblog_key}}', this)" class="{{method}}-link {{#ifValueIsTrue performed_key ../../content.actions_performed}}color-{{performed_key}}{{/ifValueIsTrue}}">
+							<i class="{{icon}}"></i>
+						{{else}}
+							<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../../../provider._id}}').actions.{{method}}('{{../../id}}', this)" class="{{method}}-link {{#ifValueIsTrue performed_key ../../content.actions_performed}}color-{{performed_key}}{{/ifValueIsTrue}}">
+							<i class="{{icon}}"></i>
+						{{/if}}
+						
+							{{#ifValueIsTrue performed_key ../content.actions_performed}}
+								{{text.performed}}
+							{{else}}
+								{{text.normal}}
+							{{/ifValueIsTrue}}
+						</a>
+					{{/each}}
+				</div>
+					
+				{{#if ../../provider.isExpandable}}
+					<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../../provider._id}}').actions.show('{{id}}')" class="expand-button">
+						{{#if ../../content.is_conversation}}
+							<i class="fa fa-comments"></i> Conversation
+						{{else}}
+							Expand
+						{{/if}}
+					</a>
+				{{/if}}
+				<div class="clear"></div>
+			</section>
+		{{/unless}}
+		<div class="clear"></div>
+	</article>
+{{/each}}

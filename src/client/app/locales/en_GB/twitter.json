@@ -1,0 +1,19 @@
+{
+    "conversation": "Conversation",
+	"details": "Show details",
+	"reply": "Reply",
+	"retweeted": "retweeted",
+	"retweetsCAPS": "RETWEETS",
+	"favoritesCAPS": "FAVOURITES",
+	"retweeted": "Retweeted",
+	"retweet": "Retweet",
+	"favorite": "Favourite",
+	"favorited": "Favourited",
+	"tweet": "Tweet",
+	"confirmRetweet": {
+        "header": "Retweet",
+        "confirm": "Are you sure you want to retweet this tweet?",
+        "cancel": "Cancel",
+        "retweet": "Retweet"
+    }
+}

@@ -1,0 +1,126 @@
+{{#each posts}}
+	<article class="post {{#if ../animated}}animated-post{{/if}} {{#if user_likes}}special-liked-facebook{{/if}}" id="post-{{../provider._id}}-{{id}}">
+		<div class="special"></div>
+
+		<div class="left">
+			<a href="http://facebook.com/{{from.id}}" class="avatar" target="_blank">
+				<img src="https://graph.facebook.com/{{from.id}}/picture?access_token={{../provider.providerTokens.accessToken}}" alt="{{from.name}}">
+			</a>
+
+			<a href="http://facebook.com/{{facebookFormatId id}}" target="_blank" class="time" data-timestamp="{{created_time}}">{{timeFormat created_time}}</a>
+		</div>
+		
+		{{#unless story}}
+			<div class="names">
+				<a href="http://facebook.com/{{from.id}}" class="name" target="_blank">
+					{{from.name}}
+				</a>
+
+				{{#if to}}				
+					{{#each to.data}}
+						{{#ifNotInTagsArray this.id ../with_tags.data ../message_tags}}
+							<i class="fa fa-caret-right"></i>
+							<a href="http://facebook.com/{{id}}" class="name" target="_blank">
+								{{name}}
+							</a>
+						{{/ifNotInTagsArray}}
+					{{/each}}
+				{{/if}}
+			</div>
+		{{/unless}}
+
+		{{#if story}}
+			<div class="context">{{story}}</div>
+		{{/if}}
+
+		{{#if message}}
+			<div class="message">
+				{{#if message}}
+					{{{facebookText message message_tags}}}
+				{{else}}
+					{{{facebookText description undefined}}}
+				{{/if}}
+
+				{{#if with_tags}}
+					<span class="facebook-with">
+						– with
+						{{#each with_tags.data}}
+							<a href="http://facebook.com/{{id}}" class="name" target="_blank">
+								{{name}}
+							</a>{{#ifNotLastItem this ../with_tags.data}},{{/ifNotLastItem}} 
+						{{/each}}
+					</span>
+				{{/if}}
+			</div>
+		{{/if}}
+
+		{{#ifEquals status_type 'added_video'}}
+			{{> facebookVideo}}
+		{{/ifEquals}}
+
+		{{#ifEquals status_type 'shared_story' type 'video'}}
+			{{> facebookVideo}}
+		{{/ifEquals}}
+
+		{{#include parent=..}}
+			{{#ifEquals status_type 'added_photos'}}
+				{{> facebookPhoto}}
+			{{/ifEquals}}
+
+			{{#ifEquals status_type undefined type 'photo' story undefined}}
+				{{> facebookPhoto}}
+			{{/ifEquals}}
+
+			{{#ifEquals status_type 'mobile_status_update' type 'photo'}}
+				{{> facebookPhoto}}
+			{{/ifEquals}}
+
+			{{#ifEquals status_type 'shared_story' type 'photo'}}
+				{{> facebookSharedPhoto}}
+			{{/ifEquals}}
+
+			{{#ifContains story 'profile picture'}}
+				{{> facebookTaggedInPhoto}}
+			{{/ifContains}}
+
+			{{#ifContains story 'cover photo'}}
+				{{> facebookTaggedInPhoto}}
+			{{/ifContains}}
+
+			{{#ifEquals status_type 'tagged_in_photo'}}
+				{{> facebookTaggedInPhoto}}
+			{{/ifEquals}}
+		{{/include}}
+
+		{{#ifEquals status_type 'shared_story' type 'link'}}
+			{{> facebookLink}}
+		{{/ifEquals}}
+
+		{{#ifEquals status_type 'app_created_story' type 'link'}}
+			{{> facebookLink}}
+		{{/ifEquals}}
+
+		<section class="actions">
+			<div class="right">
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.like('{{id}}', this)" class="like-link">{{#if user_likes}} {{i18n "facebook:liked" }} {{else}} {{i18n 'facebook:like' }} {{/if}}</a>&nbsp;&nbsp;
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.comments('{{id}}', this)" class="comment-link">{{i18n 'facebook:comment' }}</a>
+				<!--&nbsp;&nbsp;<a href="" class="share-link">Share</a>-->
+			</div>
+
+			{{#if likes}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.showLikes('{{id}}', this)" class="like-icon"><i class="fa fa-thumbs-up"></i> {{likes.summary.total_count}}</a>
+			{{/if}}
+
+			{{#if comments}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.comments('{{id}}', this, true)" ><i class="fa fa-comments"></i> {{comments.summary.total_count}}</a>
+			{{/if}}
+
+			{{#if shares}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.showShares('{{id}}', this)" class="share-icon"><i class="fa fa-file-text"></i> {{shares.count}}</a>
+			{{/if}}
+
+			<div class="clear"></div>
+		</section>
+		<div class="clear"></div>
+	</article>
+{{/each}}

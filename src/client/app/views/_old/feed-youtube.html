@@ -1,0 +1,11 @@
+{{#each posts.items}}
+	<article class="post">
+		<div class="special"></div>
+
+		{{> youtubePost}}
+
+		<div class="clear"></div>
+	</article>
+{{else}}
+	<div class="content">{{i18n 'youtube:novideo'}}</div>
+{{/each}}

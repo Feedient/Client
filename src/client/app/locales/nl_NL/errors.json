@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "De gevraagde pagina bestaat niet.",
+        "content":  "We konden de gevraagde pagina niet vinden."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Bugs ahead...",
+            "welcome": "Welkom bij Feedient!",
+            "content": "Dit is een vroege versie van onze web applicatie, met enkel een paar features werkend. Als u fouten tegenkomt of features wilt toevoegen, dan kan u ons dit altijd laten weten via de Feedback link aan de linkerkant.",
+            "footer":  "Groeten, Het Feedient Team",
+            "close":   "Sluit Venster"
+        },
+		"development": {
+			"header": "Nog niet...",
+			"content": "is niet beschikbaar in deze versie van Feedient. Probeer het opnieuw later."
+		}
+    },
+    "api": {
+        "auth": "Authorizatie Fout",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Onze servers voelen zich niet goed en hebben een fout tegengekomen. Probeer het opnieuw later. Als het probleem blijft terugkomen, ",
+            "contentlink": "laat het ons dan weten."
+        },
+        "404": {
+            "header": "Pagina niet gevonden...",
+            "content": "The opgravraagde pagina kon niet gevonden worden."
+        },
+        "general": {
+            "header": "Het ziet er neer uit vanaf hier...",
+            "content": "Het was niet mogelijk om naar de servers te connecteren. Probeer het later opnieuw."
+        }
+    },
+    "feed": {
+        "load": "We konden uw posts niet opvragen.",
+        "responded": "antwoorde met de volgende fout: ",
+        "tryAgain": "Probeer het opnieuw later."
+    }
+}

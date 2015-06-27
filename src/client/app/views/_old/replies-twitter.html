@@ -1,0 +1,26 @@
+{{#each replies}}
+	<article class="post {{twitterSpecial favorited retweeted}} {{#if ../animated}}animated-post{{/if}}" id="post-{{../provider._id}}-{{id_str}}-pushout">
+		<div class="special"></div>
+		
+		{{#include parent=..}}
+			{{#if retweeted_status}}
+				{{> twitterRetweet}}
+			{{else}}
+				{{> twitterTweet}}
+			{{/if}}
+		{{/include}}
+
+		<section class="actions">
+			<div class="right">
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.reply('{{id_str}}', this)"><i class="fa fa-reply"></i></a>
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.retweet('{{id_str}}', this)"><i class="fa fa-retweet"></i></a>
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.favorite('{{id_str}}', this)"><i class="fa fa-star"></i></a>
+			</div>
+
+			<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../provider._id}}').actions.show('{{id_str}}', this)">{{i18n 'twitter:details' }}</a>
+			
+			<div class="clear"></div>
+		</section>
+		<div class="clear"></div>
+	</article>
+{{/each}}

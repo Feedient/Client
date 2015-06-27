@@ -1,0 +1,66 @@
+{
+	"yes": "da",
+	"no":  "nu",
+    "nav": {
+        "feeds":    "Noutăți",
+        "settings": "Setări",
+        "feedback": "Feedback",
+        "logout":   "Deconectare"
+    },
+    "misc": {
+        "loading":  "Se încarcă...",
+        "help": "Ajutor",
+        "help_sent": "Trimis! Vom răspunde la cererea de ajutor cât mai repede posibil.",
+        "help_subject": "Subiect",
+        "help_message": "Mesaj",
+        "help_submit": "Trimite"
+    },
+    "compose": {
+        "header": "Scrie mesaj",
+        "postTo1": "Postez pe (",
+        "postTo2": "selectat(e))",
+        "messageHeader": "Mesaj",
+        "messageButton": "Trimite mesaj",
+        "photo": "Atașamentele cu fotografie nu sunt disponibile în versiunea curentă de Feedient. Vă rugăm verificați mai târziu."
+    },
+	"index": {
+		"scroll": "Derulează la început",
+		"close":  "Închide"
+	},
+	"logout": {
+		"logout": "Deconectează-mă",
+		"sure":   "Sunteți sigur că doriți să vă deconectați?",
+		"cancel": "Anulează",
+		"confirm":    "Da, deconectează-mă"
+	},
+	"premium":{
+		"header": "Aceasta este o funcție premium",
+    "content":    "Totuși, planul premium nu este disponibil în versiunea de testare. Vă rugăm verificați mai târziu."
+	},
+	"settings":{
+		"accounts":   "Conturi",
+		"disconnect": "Deconectați",
+		"addAccount": "Adăugați cont",
+		"FeedientAccount":    "Contul Feedient",
+		"email":  "Adresa de email",
+        "language": {
+            "label":    "Limbă",
+            "button":   "Salvați limba"    
+        },
+		"password": {
+			"current":  "Parola curentă",
+			"new":      "Parolă nouă",
+			"repeat":   "Repetați parola nouă",
+            "button":   "Salvează setările"
+		},
+		"updated":    "Contul a fost actualizat",
+		"updated_language": "Salvat! Se reîncarcă Feedient...",
+		"sessions": {
+			"header":    "Sesiuni active",
+      "explanation":   "De fiecare dată când vă conectați, o nouă sesiune de utilizator este creeată și reținută de navigator. Dacă doriți să vă deconectați de la distanță de la oricare din aceste sesiuni, eliminați sesiunea din lista de mai jos.",
+			"lastActive":    "Ultima activitate: ",
+			"disconnect":    "Deconectează această sesiune de utilizator",
+			"clear": "Șterge toate sesiunile"
+		}
+	}
+}

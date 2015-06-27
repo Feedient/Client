@@ -1,0 +1,234 @@
+/*
+Accent color: #1ead91
+*/
+
+body {
+	margin:0;
+	padding:0;
+	font-family:sans-serif;
+	font-size:14px;
+	background-color:#fff;
+	color:#2d2d2d;
+}
+
+a { text-decoration:none; }
+
+header {
+	background-color:#4b3a40;
+	padding:40px;
+	background-image:url(images/header-bg.jpg);
+	background-position:center;
+	background-size:cover;
+	text-align:center;
+}
+
+.container {
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+section {
+	padding:20px;
+	border-bottom:1px solid #e1e1e1;
+	background-color:#eeeeee;
+}
+
+section:last-child { border-bottom:none; }
+
+section.white {
+	background-color:#fff;
+}
+
+section h1 {
+	font-size:20px;
+	text-transform:uppercase;
+	margin:0;
+	margin-bottom:10px;
+}
+
+/* Fix stupid inline-block space */
+.metrics-list { font-size:0; }
+
+.metrics {
+	display:inline-block;
+	width:320px;
+	margin-right:20px;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	margin-top:20px;
+	transition:0.3s all;
+}
+
+.metrics:hover { opacity:0.7; }
+.metrics:active { -webkit-transform:scale(0.95); }
+
+.metrics .number {
+	background-color:#1ead91;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+	margin-bottom:1px;
+	padding:15px;
+	font-size:92px;
+}
+
+.metrics .label {
+	background-color:#64c6b3;
+	border-bottom-left-radius:4px;
+	border-bottom-right-radius:4px;
+	padding:6px;
+}
+
+.metrics:nth-child(3n) {
+	margin-right:0;
+}
+
+.metrics:nth-child(1),
+.metrics:nth-child(2),
+.metrics:nth-child(3) {
+	margin-top:0;
+}
+
+/* Provider colors */
+.metrics.facebook .number {
+	background-color:#3b5998;
+	font-size:70px;
+	height:106px;
+	line-height:110px;
+}
+.metrics.facebook .label { background-color:#4e69a2; }
+
+.metrics.twitter .number {
+	background-color:#0084b4;
+	font-size:70px;
+	height:106px;
+	line-height:110px;
+}
+.metrics.twitter .label { background-color:#198fbb; }
+
+.metrics.instagram .number {
+	background-color:#3f729b;
+	font-size:70px;
+	height:106px;
+	line-height:110px;
+}
+.metrics.instagram .label { background-color:#5280a5; }
+
+.metrics.youtube .number {
+	background-color:#cd332d;
+	font-size:70px;
+	height:106px;
+	line-height:110px;
+}
+.metrics.youtube .label { background-color:#d24742; }
+
+.metrics.tumblr .number {
+	background-color:#35465c;
+	font-size:70px;
+	height:106px;
+	line-height:110px;
+}
+.metrics.tumblr .label { background-color:#49586c; }
+
+.graph {
+	border:1px solid #ccc;
+	background-color:#fff;
+	padding:20px;
+}
+
+.loading {
+	text-align:center;
+	padding:20px;
+	font-weight:bold;
+	color:#999;
+	font-size:14px;
+}
+
+.progress-bar {
+	height:30px;
+	border-radius:4px;
+	margin-bottom:20px;
+	font-size:0;
+	text-align:center;
+}
+
+.progress-section {
+	height:30px;
+	display:inline-block;
+	font-size:14px;
+	font-weight:bold;
+	color:#fff;
+	text-align:center;
+	line-height:30px;
+	overflow:hidden;
+}
+
+.progress-section:first-child {
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+}
+
+.progress-section:last-child {
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+
+#facebook-part { background-color:#3b5998; }
+#twitter-part { background-color:#0084b4; }
+#instagram-part { background-color:#3f729b; }
+#youtube-part { background-color:#cd332d; }
+#tumblr-part { background-color:#35465c; }
+
+.online-count {
+	text-align:center;
+	font-size:22px;
+	color:#666;
+}
+
+.online-count strong {
+	color:#333;
+}
+
+/* Mobile support */
+@media (max-width: 1060px) {
+	.container {
+		width:100%;
+	}
+
+	.metrics {
+		display:block;
+		width:auto;
+		margin-left:20px !important;
+		margin-right:20px !important;
+		margin-bottom:20px !important;
+	}
+
+	header img {
+		width:100%;
+		max-width:491px;
+	}
+
+	.online-count {	font-size:16px; }
+}
+
+@media (max-width: 400px) {
+	header { padding:30px; }
+	.online-count {	font-size:14px; }
+
+	.metrics {
+		margin-left:10px !important;
+		margin-right:10px !important;
+		margin-bottom:10px !important;
+	}
+
+	.metrics .number { font-size:60px; }
+	.metrics.facebook .number { font-size:40px;height:90px;line-height:100px; }
+	.metrics.twitter .number { font-size:40px;height:90px;line-height:100px; }
+	.metrics.instagram .number { font-size:40px;height:90px;line-height:100px; }
+	.metrics.youtube .number { font-size:40px;height:90px;line-height:100px; }
+	.metrics.tumblr .number { font-size:40px;height:90px;line-height:100px; }
+
+	.progress-section { font-size:0; }
+}

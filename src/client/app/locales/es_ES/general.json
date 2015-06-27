@@ -1,0 +1,61 @@
+{
+	"yes": "sí",
+	"no":  "no",
+    "nav": {
+        "feeds":    "Feeds",
+        "settings": "Configura.",
+        "feedback": "Feedback",
+        "logout":   "Cerrar Sesión"
+    },
+    "misc": {
+        "loading":  "Cargando..."
+    },
+    "compose": {
+        "header": "Componer mensaje",
+        "postTo1": "Publicar a (",
+        "postTo2": "seleccionado)",
+        "messageHeader": "Mensaje",
+        "messageButton": "Enviar mensaje",
+        "photo": "Adjuntar fotos no esta disponible en esta versión de Feedient. Por favor, vuelve pronto a revisarlo."
+    },
+	"index": {
+		"scroll": "Subir",
+		"close":  "Cerrar"
+	},
+	"logout": {
+		"logout": "Cerrar Sesión",
+		"sure":   "¿Estás seguro que quieres cerrar sesión?",
+		"cancel": "Cancelar",
+		"confirm":    "Sí, cerrar sesión."
+	},
+	"premium":{
+		"header": "Esta es una herramienta Premium.",
+		"content":    "Sin embargo, el plan Premium no esta disponible en esta versión. Por favor, vuelve pronto a revisarlo."
+	},
+	"settings":{
+		"accounts":   "Cuenta",
+		"disconnect": "Desconectar",
+		"addAccount": "Agregar cuenta.",
+		"FeedientAccount":    "Cuenta de Feedient",
+		"email":  "Dirección de Email",
+        "language": {
+            "label":    "Idioma",
+            "button":   "Guardar Idioma"    
+        },
+		"password": {
+			"current":  "Contraseña actual",
+			"new":      "Nueva contraseña",
+			"repeat":   "Confirmar nueva contraseña",
+            "button":   "Guardar configuración"
+		},
+		"updated":    "Tu cuenta ha sido actualizada.",
+		"updated_language": "Guardado! Recargá Feedient...",
+		"sessions": {
+			"header":    "Sesiones activas",
+			"explanation":   "Cada vez que te conectás, una nueva sesión es creada y recordada por tu navegador. Si quieres cerrar sesión remotamente de alguna en la lista, por favor seleccionala.",
+			"lastActive":    "Última vez activo: ",
+			"disconnect":    "Cerrar esta sesión de usuario.",
+			"clear": "Borrar todas"
+		}
+	}
+}

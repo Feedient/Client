@@ -1,0 +1,200 @@
+app.config = {
+	preview: window.isPreview,
+
+	// Log level, between 0-3 where 3 is all messages and 0 is none
+	logLevel: 3,
+
+	// Feature check using modernizr
+	technology: [ 'localstorage', 'history', 'websockets'],
+
+	autoLoad: {
+		// Core => app.core.*
+		core: [
+			'/shared/js/zeus/hooks',
+			'/shared/js/zeus/log',
+			'/shared/js/zeus/view',
+			'/shared/js/zeus/router',
+			'/shared/js/zeus/api',
+			'/shared/js/zeus/i18n'
+		],
+
+		// Libraries => app.lib.*
+		lib: [
+			'<% if (hashes && hashes['app/libraries/providers.js']) { %><%= hashes['app/libraries/providers.js'] %><% } else { %>app/libraries/providers<% } %>',
+			'<% if (hashes && hashes['app/libraries/ui.js']) { %><%= hashes['app/libraries/ui.js'] %><% } else { %>app/libraries/ui<% } %>',
+			'<% if (hashes && hashes['app/libraries/user.js']) { %><%= hashes['app/libraries/user.js'] %><% } else { %>app/libraries/user<% } %>',
+			'<% if (hashes && hashes['app/libraries/hotkeys.js']) { %><%= hashes['app/libraries/hotkeys.js'] %><% } else { %>app/libraries/hotkeys<% } %>',
+			'<% if (hashes && hashes['app/libraries/stream.js']) { %><%= hashes['app/libraries/stream.js'] %><% } else { %>app/libraries/stream<% } %>',
+			'<% if (hashes && hashes['app/libraries/ads.js']) { %><%= hashes['app/libraries/ads.js'] %><% } else { %>app/libraries/ads<% } %>'
+		],
+
+		// Services => app.services.*
+		services: [
+			'app/services/providers'
+		],
+
+		// Helpers => app.helpers.*
+		helpers: {
+			initialize: false,
+			files: [
+				<% if (hashes && hashes['app/helpers/all.js']) { %>
+					'<%= hashes['app/helpers/all.js'] %>'
+				<% } else { %>
+					'app/helpers/timeAgo',
+					'app/helpers/handlebars',
+					'app/helpers/draggable',
+					'app/helpers/popup',
+					'app/helpers/scrollWatch',
+					'app/helpers/scrollCompensate',
+					'app/helpers/selectField',
+					'app/helpers/formatMessage',
+					'app/helpers/feedNavigation',
+					'app/helpers/liveSuggestions'
+				<% } %>
+			]
+		},
+
+		// Providers => app.providers.*
+		providers: {
+			initialize: false,
+			files: [
+				<% if (hashes && hashes['app/providers/all.js']) { %>
+					'<%= hashes['app/providers/all.js'] %>'
+				<% } else { %>
+					'app/providers/base',
+					'app/providers/twitter',
+					'app/providers/facebook',
+					'app/providers/instagram',
+					'app/providers/youtube',
+					'app/providers/tumblr',
+					'app/providers/rss'
+				<% } %>
+			]
+		},
+
+		// Controllers => app.core.router.get(...)
+		controllers: {
+			initialize: false,
+			files: [
+				<% if (hashes && hashes['app/controllers/all.js']) { %>
+					'<%= hashes['app/controllers/all.js'] %>'
+				<% } else { %>
+					'app/controllers/index',
+					'app/controllers/settings',
+					'app/controllers/404',
+					'app/controllers/notifications'
+				<% } %>
+			]
+		},
+
+		setup: {
+			initialize: false,
+			files: [ 'app/setup' ]
+		}
+	},
+
+	// Optionally preload common views
+	preloadViews: [
+		'feed/index',
+		'pages/settings',
+		'modals/compose'
+	],
+
+	preloadViewPartials: { },
+
+	// Localization settings
+	localization: {
+		defaultLocale: 'en_GB',
+		locales: {
+			en_GB: 'English (UK)',
+			en_US: {
+				name: 'English (US)',
+				extend: 'en_GB'
+			},
+			es_ES: 'Español',
+			fr_FR: 'Français',
+			nl_BE: {
+				name: 'Nederlands (BE)',
+				extend: 'nl_NL'
+			},
+			nl_NL: 'Nederlands (NL)',
+			pt_PT: 'Português (PT)',
+			pt_BR: {
+				name: 'Português (BR)',
+				extend: 'pt_PT'
+			},
+			ro_RO: 'Română',
+			sv_SE: 'Svenska',
+			tr_TR: 'Türkçe'
+		},
+		files: [
+			'general', 'errors', 'facebook', 'twitter', 'youtube', 'instagram', 'tumblr'
+		],
+		parallelLimit: 5,
+	},
+
+	viewEngine: {
+		parallelLimit: 5,
+	},
+
+	// Path without trailing slash
+	path: '/app',
+
+	// API server URL
+	API: window.API,
+
+	// Show ads
+	ads: <% if(config.ads) { %>true<% } else { %>false<% } %>,
+
+	fileUpload: {
+		maxFileSize: 10485760, // 10 MB
+		supportedFileTypes: [
+			'image/jpeg',
+			'image/png',
+			'image/gif'
+		]
+	},
+
+	providers: {
+		twitter: {
+			formattedName: 'Twitter',
+			icon: 'fa fa-twitter',
+			APP_ID: '<%=config.providers.twitter.app_id %>'
+			<% if (config.providers.twitter.disabled) { %>,disabled: true<% } %>
+		},
+
+		facebook: {
+			formattedName: 'Facebook',
+			icon: 'fa fa-facebook-square',
+			APP_ID: '<%=config.providers.facebook.app_id %>'
+			<% if (config.providers.facebook.disabled) { %>,disabled: true<% } %>
+		},
+
+		instagram: {
+			formattedName: 'Instagram',
+			icon: 'fa fa-instagram',
+			APP_ID: '<%=config.providers.instagram.app_id %>'
+			<% if (config.providers.instagram.disabled) { %>,disabled: true<% } %>
+		},
+
+		youtube: {
+			formattedName: 'YouTube',
+			icon: 'fa fa-youtube-play',
+			APP_ID: '<%=config.providers.youtube.app_id %>'
+			<% if (config.providers.youtube.disabled) { %>,disabled: true<% } %>
+		},
+
+		tumblr: {
+			formattedName: 'Tumblr',
+			icon: 'fa fa-tumblr-square',
+			APP_ID: '<%=config.providers.tumblr.app_id %>'
+			<% if (config.providers.tumblr.disabled) { %>,disabled: true<% } %>
+		},
+
+		rss: {
+			formattedName: 'RSS feed',
+			icon: 'fa fa-rss',
+			<% if (config.providers.rss.disabled) { %>,disabled: true<% } %>
+		},
+	}
+};

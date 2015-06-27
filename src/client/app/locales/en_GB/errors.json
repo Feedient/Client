@@ -1,0 +1,42 @@
+{
+    "OAUTH_RATE_LIMIT_REACHED": "Your account is temporarily rate limited by the social network for loading too much content in a short period. It might take up to 15 minutes before it starts working again.",
+
+    "404": {
+        "header":   "Oops, there is nothing here",
+        "content":  "We were unable to find the page you were looking for."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Bugs ahead...",
+            "welcome": "Welcome to Feedient!",
+            "content": "This is an early version of our web application, with only a couple of features working. If you encounter bugs or have any feature requests, feel free to use the Feedback link to the left.",
+            "footer":  "Kind regards, The Feedient Team",
+            "close":   "Close window"
+        },
+		"development": {
+			"header": "Not just yet...",
+			"content": "is not available in the current version of Feedient. Please check back later."
+		}
+    },
+    "api": {
+        "auth": "Authorization error",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Our servers are not feeling very well and encountered an error. Please try again. If the problem persists, please ",
+            "contentlink": "let us know"
+        },
+        "404": {
+            "header": "Page not found...",
+            "content": "The page you requested could not be found."
+        },
+        "general": {
+            "header": "It looks down from here...",
+            "content": "We were unable to connect to our server. Please try again."
+        }
+    },
+    "feed": {
+        "load": "We were unable to load your posts.",
+        "responded": "responded with the following error:",
+        "tryAgain": "Please try again later."
+    }
+}

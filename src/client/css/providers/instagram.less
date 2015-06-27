@@ -1,0 +1,118 @@
+@instagramColor: #3f729b;
+
+.instagram-toggle { display:none; }
+
+.feedient-instagram {
+	.color-liked { color:#e33f3f !important; }
+
+	.pushout-actions {
+		.color-liked {
+			border-color:#e33f3f !important;
+			background-color:#e33f3f !important;
+			color:#fff !important;
+
+			&:hover {
+				color:#e33f3f !important;
+				background-color:transparent !important;
+			}
+		}
+	}
+
+	h1, a {
+		color:@instagramColor;
+	}
+
+	a:hover {
+		color:darken(@instagramColor, 15%);
+	}
+
+	.post {
+		&:hover {
+			.actions {
+				a {
+					color:@instagramColor;
+				}
+			}
+		}
+
+		&.special-liked-instagram {
+			.special {
+				opacity:1;
+				border-color:transparent #e33f3f transparent transparent;
+			}
+
+			.actions {
+				.like-link, .like-icon {
+					color:#e33f3f;
+				}
+			}
+		}
+
+		.post-comments {
+			margin-top:10px;
+			font-size:13px;
+
+			i {
+				color:@lightText;
+			}
+
+			.username {
+				font-weight:bold;
+			}
+
+			.all-comments-link {
+				margin-top:10px;
+				display:block;
+				font-weight:bold;
+				color:@lightText;
+
+				&:hover {
+					color:@instagramColor;
+				}
+			}
+		}
+
+		.top {
+			.avatar {
+				float:left;
+				margin-right:10px;
+
+				img {
+					width:22px;
+					height:22px;
+				}
+			}
+
+			.name {
+				padding-top:4px;
+			}
+		}
+
+		.time {
+			font-size:12px;
+			padding-top:1px;
+		}
+
+		.post-image {
+			height:350px;
+
+			.img-small {
+				height:270px;
+			}
+		}
+	}
+}
+
+.instagram-color {
+	color:@instagramColor;
+}
+
+.button.feedient-instagram-button {
+	background-color:@instagramColor;
+	border-color:@instagramColor;
+	text-align:left;
+
+	&:hover {
+		color:@instagramColor;
+	}
+}

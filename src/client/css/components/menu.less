@@ -1,0 +1,103 @@
+nav {
+	position:fixed;
+	height:100%;
+	width:85px;
+	background-color:#111111;
+	z-index: 10;
+
+	li {
+		a {
+			display:block;
+			height:66px;
+			font-size:13px;
+			font-weight:bold;
+			color:#666;
+			text-align:center;
+			padding-top:14px;
+
+			.fa {
+				font-size:32px;
+				display:block !important;
+				margin-bottom:5px;
+			}
+		}
+
+		&:hover {
+			a {
+				color:#d4d4d4;
+			}
+		}
+
+		&:active {
+			a {
+				background-color:#292929;
+				color:#fff;
+			}
+		}
+	}
+
+	.button {
+		a {
+			background-color:@primaryColor;
+			border:2px solid @primaryColor;
+			border-radius:4px;
+			color:#fff;
+			width:52px;
+			height:55px;
+			padding:0px;
+			margin:15px auto;
+			text-align:center;
+			padding-left:3px;
+		}
+
+		i {
+			padding-top:10px;
+		}
+
+		&:hover {
+			a {
+				background-color:darken(@primaryColor, 15%);
+				border-color:darken(@primaryColor, 15%);
+				color:#fff;
+			}
+		}
+	}
+
+	li.active {
+		a {
+			background-color:#353737;
+			color:#fff;
+		}
+
+		&:hover {
+			a {
+				background-color:#353737;
+			}
+		}
+	}
+
+	.notifications {
+		i {
+			color:#e33f3f;
+		}
+
+		#notification-number {
+			position:absolute;
+			width:85px;
+			left:0;
+			color:#fff;
+			font-size:16px;
+			top:188px; // hackfix to align in retarded browsers
+		}
+	}
+
+	.notifications.no-notifications {
+		i {
+			color:#222222;
+		}
+
+		#notification-number {
+			color:#626666;
+		}
+	}
+}

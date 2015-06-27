@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+	<% include partials/head %>
+	<body>
+		<h1>Team members</h1>
+		<% team.forEach(function(member) { %>
+			<h2><%= member.name %></h2>
+			<p><%= member.description %></p>
+		<% }); %>
+	</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<base href="/app/">
+		<% include ../shared/views/head %>
+		<meta http-equiv="refresh" content="86400">
+
+		<% if (config.ads) { %>
+			<script type='text/javascript'>
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
+			(function() {
+			var gads = document.createElement('script');
+			gads.async = true;
+			gads.type = 'text/javascript';
+			var useSSL = 'https:' == document.location.protocol;
+			gads.src = (useSSL ? 'https:' : 'http:') +
+			'//www.googletagservices.com/tag/js/gpt.js';
+			var node = document.getElementsByTagName('script')[0];
+			node.parentNode.insertBefore(gads, node);
+			})();
+			</script>
+
+			<script type='text/javascript'>
+			/*googletag.cmd.push(function() {
+			googletag.defineSlot('/ID/NAME', [160, 600], 'AD-ID').addService(googletag.pubads());
+			googletag.pubads().enableSingleRequest();
+			googletag.enableServices();
+			});*/
+			</script>
+		<% } %>
+
+		<script src="https://checkout.stripe.com/checkout.js"></script>
+	</head>
+
+	<body>
+		<div id="toast"></div>
+		<div id="notification-alerts"></div>
+		<div id="modal"></div>
+		<div id="modal-bg"></div>
+		<nav id="menu">
+			<ul>
+				<li class="button">
+					<a href="javascript:void(0)" onClick="app.lib.ui.compose.show()">
+						<i class="fa fa-comment"></i>
+					</a>
+				</li>
+				<li id="feeds-link">
+					<a href="./">
+						<i class="fa fa-list"></i>
+						<span data-i18n="general.nav.feeds">Feeds</span>
+					</a>
+				</li>
+				<li class="notifications no-notifications" data-active-link="" id="notifications-link"> <!-- add .no-notifications -->
+					<a href="javascript:void(0)" onClick="app.controllers.notifications()">
+						<div id="notification-number"></div>
+						<i class="fa fa-circle"></i> <span style="letter-spacing:-0.5px;font-size:12px;">Notifications</span>
+					</a>
+				</li>
+				<li id="settings-link">
+					<a href="settings">
+						<i class="fa fa-cog"></i>
+						<span data-i18n="general.nav.settings">Settings</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" id="userVoice" onClick="app.lib.ui.feedback.show()">
+						<i class="fa fa-bullhorn"></i>
+						<span data-i18n="general.nav.feedback">Feedback</span>
+					</a>
+				</li>
+				<li id="admin" style="display:none;">
+					<a href="/admin" data-direct="1" target="_blank">
+						<i class="fa fa-bar-chart-o"></i>
+						<span>Stats</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onClick="app.lib.ui.logout.confirm();">
+						<i class="fa fa-sign-out"></i><span data-i18n="general.nav.logout">Log Out</span>
+					</a>
+				</li>
+			</ul>
+
+			<a href="javascript:void(0)" onClick="app.lib.ui.home()" id="logo" data-hasevents='1'></a>
+		</nav>
+
+		<div id="loading"></div>
+
+		<% if (config.ads) { %>
+			<div id="ads"></div>
+		<% } %>
+
+		<section id="main" tabindex="-1"></section>
+
+		<!-- Third party dependencies -->
+		<script src="/shared/js/async.min.js"></script>
+		<script>
+			document.write('<script src="/shared/js/' + ('__proto__' in {} ? 'zepto' : 'jquery') + '.min.js"><\/script>');
+		</script>
+		<script src="/shared/js/jquery.cookie.min.js"></script>
+		<script>
+			if (!window.location.origin) {
+				window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+			}
+		</script>
+		<script>
+			if (!$.cookie('token')) window.location = '/';
+		</script>
+		<script src="/shared/js/require.min.js"></script>
+		<script src="/shared/js/handlebars.min.js"></script>
+		<script src="/shared/js/modernizr.custom.min.js"></script>
+		<script src="/shared/js/sockjs.min.js"></script>
+		<!--[if IE]>
+			<script src="/shared/js/jquery.xdomainrequest.min.js"></script>
+			<script src="/shared/js/foreach.polyfill.min.js"></script>
+		<![endif]-->
+
+		<!-- Zeus framework -->
+		<script src="/shared/js/zeus/core.js"></script>
+
+		<script>
+			<% if(config.inviteOnly) { %>
+				window.isPreview = true;
+			<% } %>
+		</script>
+	</body>
+</html>

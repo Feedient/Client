@@ -1,0 +1,66 @@
+{
+	"yes": "yes",
+	"no":  "no",
+    "nav": {
+        "feeds":    "Feeds",
+        "settings": "Settings",
+        "feedback": "Feedback",
+        "logout":   "Log Out"
+    },
+    "misc": {
+        "loading":  "Loading...",
+        "help": "Help",
+        "help_sent": "Sent! We will respond to your support request as soon as possible.",
+        "help_subject": "Subject",
+        "help_message": "Message",
+        "help_submit": "Submit"
+    },
+    "compose": {
+        "header": "Compose message",
+        "postTo1": "Post to (",
+        "postTo2": "selected)",
+        "messageHeader": "Message",
+        "messageButton": "Send message",
+        "photo": "Photo attachments are not available in the current version of Feedient. Please check back later."
+    },
+	"index": {
+		"scroll": "Scroll to top",
+		"close":  "Close"
+	},
+	"logout": {
+		"logout": "Log Out",
+		"sure":   "Are you sure you want to log out?",
+		"cancel": "Cancel",
+		"confirm":    "Yes, log out"
+	},
+	"premium":{
+		"header": "This is a premium feature",
+		"content":    "However, the premium plan is not available in the testing version. Please check back later."
+	},
+	"settings":{
+		"accounts":   "Accounts",
+		"disconnect": "Disconnect",
+		"addAccount": "Add account",
+		"FeedientAccount":    "Feedient account",
+		"email":  "Email address",
+        "language": {
+            "label":    "Language",
+            "button":   "Save language"    
+        },
+		"password": {
+			"current":  "Current password",
+			"new":      "New password",
+			"repeat":   "Repeat new password",
+            "button":   "Save settings"
+		},
+		"updated":    "Your account has been updated",
+		"updated_language": "Saved! Reloading Feedient...",
+		"sessions": {
+			"header":    "Active sessions",
+			"explanation":   "Every time you sign in, a new user session is created and remembered by the browser. If you want to sign out remotely for any of these sessions, simply remove the session from the list below.",
+			"lastActive":    "Last active: ",
+			"disconnect":    "Disconnect this user session",
+			"clear": "Clear all sessions"
+		}
+	}
+}

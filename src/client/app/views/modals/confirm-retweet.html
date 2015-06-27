@@ -1,0 +1,11 @@
+<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal"><i class="fa fa-times"></i></a>
+<h1>{{i18n "twitter:confirmRetweet.header" }}</h1>
+
+<p>{{i18n "twitter:confirmRetweet.confirm" }}</p>
+
+<div class="right">
+	<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="button secondary-button">{{i18n "twitter:confirmRetweet.cancel" }}</a>&nbsp;&nbsp;
+	<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{ providerId }}').actions.doRetweet()" class="button">{{i18n "twitter:confirmRetweet.retweet" }}</a>
+</div>
+
+<div class="clear"></div>

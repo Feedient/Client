@@ -1,0 +1,14 @@
+<script>
+	// Split the URL query by & followed by [a-z_] and =
+	var queryString = window.location.search.split(/&?[a-z_]+\=/);
+
+	// Remove the first item, since it is just '?'
+	queryString.splice(0, 1);
+
+	// Pass the query data to the main window
+	window.opener.app.controller.injectProviderData('facebook', {
+		oauth_code: queryString[0]
+	});
+
+	window.close();
+</script>

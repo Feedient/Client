@@ -1,0 +1,40 @@
+<div class="twitter" style="width:400px;" id="pushout-{{ providerId }}-{{ postData.id_str }}">
+	<div id="pushout-parents-{{ providerId }}-{{ postData.id_str }}" class="pushout-parents"></div>
+
+	{{{ tweetView }}}
+
+	<div id="pushout-actions">
+		<a class="retweet-button {{#if postData.retweeted}}color-retweeted{{/if}}" href="javascript:void(0)" onClick="app.lib.user.getProvider('{{providerId}}').actions.retweet('{{postData.id_str}}', this, true)">
+			<i class="fa fa-retweet"></i> {{#if postData.retweeted}}{{i18n 'twitter:retweeted' }} {{else}} {{i18n 'twitter:retweet' }} {{/if}}
+		</a>
+
+		<a class="favorite-button {{#if postData.favorited}}color-favorited{{/if}}" href="javascript:void(0)" onClick="app.lib.user.getProvider('{{providerId}}').actions.favorite('{{postData.id_str}}', this, true)">
+			<i class="fa fa-star"></i>{{#if postData.favorited}}{{i18n 'twitter:favorited' }} {{else}} {{i18n 'twitter:favorite' }}{{/if}}
+		</a>
+	</div>
+
+	<div id="twitter-pushout">
+		<form onSubmit="app.lib.user.getProvider('{{providerId}}').actions.submitReply('{{ postData.id_str }}')">
+			<textarea id="reply-text" style="width:360px;max-width:360px;" placeholder="Reply to @{{#if postData.retweeted_status}}{{postData.retweeted_status.user.screen_name}}{{else}}{{postData.user.screen_name}}{{/if}}" onFocus="app.lib.user.getProvider('{{providerId}}').specialCompose.focusReplyField(this)" onBlur="app.lib.user.getProvider('{{providerId}}').specialCompose.focusReplyField(this)" data-username="@{{#if postData.retweeted_status}}{{postData.retweeted_status.user.screen_name}}{{else}}{{postData.user.screen_name}}{{/if}}"></textarea>
+			<div class="bottom">
+				<div class="right">
+					<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{providerId}}').actions.submitReply('{{ postData.id_str }}')" class="button right" id="compose-submit-button">{{i18n 'twitter:tweet' }}</a>
+					<div id="special-compose-area" class="right">
+						<div id="twitter-special-compose">
+							<i class="fa fa-twitter"></i> <span id="twitter-special-remaining-reply">140</span>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!--<a href="javascript:void(0)" onclick="app.lib.ui.compose.attachPhoto()" class="action-button"><i class="fa fa-camera"></i></a>-->
+				<div class="clear"></div>
+				<div id="reply-loading" class="inline-loading" style="display:none;"></div>
+				<div id="unsupported-photo"><i class="fa fa-warning"></i> {{i18n 'general:compose.photo' }}</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="pushout-replies-{{ providerId }}-{{ postData.id_str }}" class="pushout-replies">
+		<div class="inline-loading"></div>
+	</div>
+</div>

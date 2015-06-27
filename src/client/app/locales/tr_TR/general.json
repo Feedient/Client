@@ -1,0 +1,61 @@
+{
+	"yes": "evet",
+	"no":  "hayır",
+    "nav": {
+        "feeds":    "Feeds",
+        "settings": "Ayarlar",
+        "feedback": "Geribildirim",
+        "logout":   "Çıkış Yap"
+    },
+    "misc": {
+        "loading":  "Yükleniyor..."
+    },
+    "compose": {
+        "header": "Mesaj yaz",
+        "postTo1": "Şuralarda yayımla (",
+        "postTo2": "seçildi)",
+        "messageHeader": "Mesaj",
+        "messageButton": "Mesajı gönder",
+        "photo": "Fotoğraf ekleme, Feedient'in bu versiyonunda kullanılamıyor. Lütfen daha sonra tekrar kontrol edin."
+    },
+	"index": {
+		"scroll": "Yukarı kaydır",
+		"close":  "Kapat"
+	},
+	"logout": {
+		"logout": "Çıkış Yap",
+		"sure":   "Çıkış yapmak istediğinize emin misiniz?",
+		"cancel": "İptal",
+		"confirm":    "Evet, çıkış yap"
+	},
+	"premium":{
+		"header": "Bu bir premium özelliği",
+		"content":    "Fakat, test versiyonunda premium mevcut değil. Lütfen daha sonra tekrar kontrol edin."
+	},
+	"settings":{
+		"accounts":   "Hesaplar",
+		"disconnect": "Bağlantıyı kes",
+		"addAccount": "Hesap ekle",
+		"FeedientAccount":    "Feedient hesabı",
+		"email":  "E-posta adresi",
+        "language": {
+            "label":    "Dil",
+            "button":   "Dili kaydet"    
+        },
+		"password": {
+			"current":  "Mevcut şifre",
+			"new":      "Yeni şifre",
+			"repeat":   "Tekrar yeni şifre",
+            "button":   "Ayarları kaydet"
+		},
+		"updated":    "Hesabınız güncellendi",
+		"updated_language": "Kaydedildi! Feedient yeniden yükleniyor...",
+		"sessions": {
+			"header":    "Aktif oturumlar",
+			"explanation":   "Her giriş yaptığınızda, tarayıcı tarafından yeni bir oturum oluşturulur. Eğer bu oturumları uzaktan kapatmak isterseniz, basitçe aşağıdaki listeden oturumu kaldırın.",
+			"lastActive":    "Son etkinlik: ",
+			"disconnect":    "Bu oturumdan çıkış yap",
+			"clear": "Tüm oturumları temizle"
+		}
+	}
+}

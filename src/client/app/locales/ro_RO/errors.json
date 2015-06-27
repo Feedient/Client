@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "Ups, nu este nimic aici",
+        "content":  "Ne este imposibil să găsim pagina pe care o căutați."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Defecte...",
+            "welcome": "Bine ați venit la Feedient!",
+            "content": "Aceasta este o versiune inițială a acestei aplicații web, cu doar câteva caracteristici funcționale. Dacă întâmpinați defecțiuni sau aveți orice cereri pentru caracteristici noi, simțiți-vă liberi să folosiți legătura de feedback din partea stângă.",
+            "footer":  "Cu stimă, echipa Feedient",
+            "close":   "Închideți fereastra"
+        },
+		"development": {
+			"header": "Nu încă...",
+			"content": "nu este disponibil în versiunea curentă de Feedient. Vă rugăm încercați mai târziu."
+		}
+    },
+    "api": {
+        "auth": "Eroare de autorizare",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Serverele noastre nu se simt foarte bine și au întâmpinat o eroare. Vă rugăm încercați din nou. Dacă problema persistă, vă rugăm ",
+            "contentlink": "contactați-ne"
+        },
+        "404": {
+            "header": "Pagina nu a fost găsită...",
+            "content": "Pagina pe care ați cerut-o nu a fost găsită."
+        },
+        "general": {
+            "header": "Nu se poate realiza conexiunea...",
+            "content": "Nu ne putem conecta la serverul nostru. Vă rugăm încercați mai târziu."
+        }
+    },
+    "feed": {
+        "load": "Nu am putut încărca postările.",
+        "responded": "a apărut următoarea eroare:",
+        "tryAgain": "Vă rugăm încercați mai târziu."
+    }
+}

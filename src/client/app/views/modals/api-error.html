@@ -1,0 +1,33 @@
+<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal">
+	<i class="fa fa-times"></i>
+</a>
+
+{{#if status}}
+	{{#ifEquals status 500}}
+		<h1><i class="fa fa-stethoscope"></i> Cough, cough...</h1>
+        <p>Our servers are not feeling very well and encountered an error. Please try again. If the problem persists, please <a href="../contact" style="color:#1ead91">let us know</a>.</p>
+	{{/ifEquals}}
+
+	{{#ifEquals status 502}}
+		<h1><i class="fa fa-stethoscope"></i> Cough, cough...</h1>
+        <p>Our servers are not feeling very well and encountered an error. Please try again. If the problem persists, please <a href="../contact" style="color:#1ead91">let us know</a>.</p>
+	{{/ifEquals}}
+
+	{{#ifEquals status 504}}
+		<h1><i class="fa fa-clock-o"></i> Loading issues...</h1>
+		<p>Something is taking longer time to load than it should. You may want to try to refresh the page if you encounter any issues.</p>
+	{{/ifEquals}}
+
+	{{#ifEquals status 404}}
+		<h1><i class="fa fa-frown-o"></i> Page not found...</h1>
+		<p>The page you requested could not be found.</p>
+	{{/ifEquals}}
+
+	{{#ifEquals status 1003}}
+		<h1><i class="fa fa-dashboard"></i> Slow down...</h1>
+		<p><strong>We have hit a refresh limit for your {{provider.formattedName}} account <span class="{{provider.providerName}}-color"><i class="{{provider.icon}}"></i> {{provider.name}}</span>.</strong> The feed may not receive any updates for up to 15 minutes. Please be patient.</p>
+	{{/ifEquals}}
+{{else}}
+	<h1><i class="fa fa-cloud-download"></i> It looks down from here..</h1>
+	<p>We were unable to connect to our server. Please try again.</p>
+{{/if}}

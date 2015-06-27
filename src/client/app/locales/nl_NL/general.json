@@ -1,0 +1,61 @@
+{
+	"yes": "Ja",
+	"no":  "Nee",
+    "nav": {
+        "feeds":    "Feed",
+        "settings": "Instellingen",
+        "feedback": "Feedback",
+        "logout":   "Log Uit"
+    },
+    "misc": {
+        "loading":  "Laden..."
+    },
+    "compose": {
+        "header": "Creëer bericht",
+        "postTo1": "Stuur naar (",
+        "postTo2": "geselecteerd)",
+        "messageHeader": "Bericht",
+        "messageButton": "Stuur bericht",
+        "photo": "Foto's kunnen nog niet toegevoegd worden in deze versie van Feedient. Probeer het later opnieuw."
+    },
+	"index": {
+		"scroll": "Scroll naar top",
+		"close":  "Sluit"
+	},
+	"logout": {
+		"logout": "Log Uit",
+		"sure":   "Bent u zeker dat u wil uitloggen?",
+		"cancel": "Annuleer",
+		"confirm":    "Ja, log uit"
+	},
+	"premium":{
+		"header": "Dit is een premium feature",
+		"content":    "Het premium plan is echter nog niet beschikbaar in de test versie. Probeer het opnieuw later."
+	},
+	"settings":{
+		"accounts":   "Accounts",
+		"disconnect": "Verwijder",
+		"addAccount": "Voeg Account Toe",
+		"FeedientAccount":    "Feedient account",
+		"email":  "Email adres",
+        "language": {
+            "label":    "Taal",
+            "button":   "Sla taal op"    
+        },
+		"password": {
+			"current":  "Huidig wachtwoord",
+			"new":      "Nieuw wachtwoord",
+			"repeat":   "Herhaal nieuw wachtwoord",
+            "button":   "Sla instellingen op"
+		},
+		"updated":    "Uw account is geupdated",
+		"updated_language": "Opgeslagen! Feedient wordt nu herladen...",
+		"sessions": {
+			"header":    "Actieve sessies",
+			"explanation":   "Elke keer u inlogt, wordt er een nieuwe gebruiker sessie aangemaakt en onthouden door de webbrowser. Als u wilt uitloggen van een van deze sessies kan u deze verwijderen in de onderstaande lijst.",
+			"lastActive":    "Laatst Actief: ",
+			"disconnect":    "Verwijder deze sessie",
+			"clear": "Verwijder alle sessies"
+		}
+	}
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ../shared/views/head %>
+	</head>
+
+	<body>
+		<!--[if lte IE 8]>
+		<div style="background-color:#fff;color:#000;padding:20px;text-align:center;border-bottom:1px solid #ccc;">
+			<h1>Your web browser is too old</h1>
+			<div style="line-height:1.5;color:#333;">
+				<p>Feedient is built upon modern web technology and therefore needs to be visited from a modern web browser. Your browser does not support all the technology we make use of.</p>
+
+				<p><strong>Please upgrade to a faster and more powerful web browser.</strong></p>
+
+				<div style="height:70px;">
+					<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank" style="margin-right:20px;"><img width="70" src="/app/images/browsers-large/chrome.png" alt="Chrome"></a>
+					<a href="http://www.mozilla.org/firefox/" target="_blank" style="margin-right:20px;"><img  width="70"src="/app/images/browsers-large/firefox.png" alt="Firefox"></a>
+					<a href="http://www.opera.com/" target="_blank"><img  width="70"src="/app/images/browsers-large/opera.png" alt="Opera"></a>
+				</div>
+			</div>
+		</div>
+		<![endif]-->
+
+		<% include views/top %>
+
+		<header>
+			<h1>Keep your social life in one simple overview</h1>
+
+			<div id="screenshot">
+				<script>
+					if (window.devicePixelRatio > 1) {
+						document.write('<img src="images/screenshot@2x.png" alt="Feedient Web App">');
+					} else {
+						document.write('<img src="images/screenshot.png" alt="Feedient Web App">');
+					}
+				</script>
+
+				<noscript>
+					<img src="images/screenshot.png" alt="Feedient Web App">
+				</noscript>
+			</div>
+		</header>
+		
+		<% include views/modals %>
+
+		<section id="features">
+			<section class="center">
+				<h1>The easiest way to stay up to date with all your friends</h1>
+				<ul>
+					<li>
+						<i class="fa fa-group"></i>
+						<h2>The biggest social networks</h2>
+						<p>Feedient connects seamlessly with Twitter, Facebook, Instagram, Tumblr and your YouTube subscriptions.</p>
+					</li>
+					<li>
+						<i class="fa fa-clock-o"></i>
+						<h2>Streamed in real-time</h2>
+						<p>No need to refresh or click on an update button – we will automatically send you the new posts as they arrive.</p>
+					</li>
+					<li>
+						<i class="fa fa-globe"></i>
+						<h2>Universal notifications</h2>
+						<p>Our universal notification center gathers all the notifications for your accounts in one single place.</p>
+					</li>
+				</ul>
+			</section>
+		</section>
+		
+		<% if(testimonials.length) { %>
+		<section id="testimonials">
+			<section class="center">
+				<h1>What people are saying about Feedient</h1>
+				<ul>
+					<% testimonials.forEach(function(quote) { %>
+					<li>
+						<img src="<%= quote.picture %>" alt="<%= quote.author %>" class="picture" width="80" height="80">
+						<blockquote>”<%= quote.message %>”</blockquote>
+						<p class="author">– <%= quote.author %></p>
+					</li>
+					<% }); %>
+				</ul>
+
+				<div class="clear"></div>
+				
+				<a href="javascript:void(0)" id="signup-bottom-button" class="button action-signup">SIGN UP FOR FREE</a>
+			</section>
+		</section>
+		<% } %>
+
+		<section class="content-wrapper bottom-divider">
+			<section class="center" style="text-align:center;">
+				<h1 style="font-size:30px;color:#666;font-weight:400;">As featured in</h1>
+				<div id="news-sites" class="on-frontpage">
+					<a href="http://olhardigital.uol.com.br/noticia/41719/41719" target="_blank"><img src="images/press/sites/black/olhardigital.png" alt="Olhar Digital" height="63"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="http://lifehacker.com/feedient-puts-your-twitter-facebook-and-instagram-fee-1569416764/all" target="_blank"><img src="images/press/sites/black/lifehacker.png" alt="LifeHacker" height="63"></a>
+					<a href="http://24.ae/Article.aspx?ArticleId=74397" target="_blank"><img src="images/press/sites/black/24ae.png" alt="24.ae" height="63"></a>
+					<a href="http://bitelia.com/2014/04/feedient-redes-sociales" target="_blank"><img src="images/press/sites/black/bitelia.png" alt="Bitelia" height="63"></a><br>
+					<a href="http://www.techtudo.com.br/noticias/noticia/2014/05/feedient-reune-facebook-youtube-instagram-e-twitter-em-tela-unica.html" target="_blank"><img src="images/press/sites/black/techtudo.png" alt="TechTudo" height="63"></a>
+					<a href="http://www.makeuseof.com/tag/gather-twitter-facebook-instagram-youtube-feeds-one-place/" target="_blank"><img src="images/press/sites/black/makeuseof.png" alt="MakeUseOf" height="63"></a>
+				</div>
+			</section>
+		</section>
+
+		<% if(!config.inviteOnly) { %>
+			<section id="pre-release" style="border-top:none;">
+				<section class="center">
+					<h1><i class="fa fa-flag"></i> We are currently in open beta stage</h1>
+					<div class="description">
+						<p>While Feedient is publicly available for anyone to try and use, it is not considered a finished product. You may experience bugs and miss certain features, but that is the reason why we are doing this – we want to hear your feedback.</p>
+					</div>
+				</section>
+			</section>
+		<% } else { %>
+			<section id="pre-release" style="border-top:none;">
+				<section class="center">
+					<h1><i class="fa fa-flag"></i> We are currently in closed alpha stage</h1>
+					<div class="description">
+						<p><strong>What is this?</strong> To make sure we are able to deliver the best possible experience at launch, we gradually invite more people to join the test stage of Feedient.The testers feedback during this stage will have a great impact on the final product.</p>
+
+						<p>If you wish to try Feedient but don't have an invite, please sign up with your email below.<br>First come, first served. More invites will be released every now and then.</p>
+					</div>
+
+					<div id="mc_embed_signup">
+						<form action="http://lindstromweb.us7.list-manage1.com/subscribe/post?u=bcfe8771538bfd2de6c274dd7&amp;id=e40eaeb039" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+						<label for="email">Want to get notified when you can try Feedient?</label>
+						<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Please enter your email">
+						<input type="submit" value="SUBMIT" name="subscribe" id="mc-embedded-subscribe" class="button"></form>
+					</div>
+				</section>
+			</section>
+		<% } %>
+
+		<section id="social">
+			<section class="center">
+				Make sure to follow our progress on 
+				<a href="http://facebook.com/feedient" target="_blank" class="facebook"><i class="fa fa-facebook-square"></i>&nbsp;Facebook</a> or 
+				<a href="http://twitter.com/feedientapp" target="_blank" class="twitter"><i class="fa fa-twitter"></i>&nbsp;Twitter</a>
+			</section>
+		</section>
+
+		<% include views/footer %>
+	</body>
+</html>

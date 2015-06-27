@@ -1,0 +1,19 @@
+<div class="left">
+	<a href="http://www.youtube.com/channel/{{snippet.channelId}}" class="avatar" target="_blank">
+		<img src="{{user.profile_picture}}" alt="{{user.username}}">
+	</a>
+
+	<a href="#" class="time" target="_blank" data-timestamp="{{snippet.publishedAt}}">{{timeFormat snippet.publishedAt}}</a>
+</div>
+
+<a href="http://www.youtube.com/channel/{{snippet.channelId}}" class="name" target="_blank">
+	{{snippet.channelTitle}}
+</a>
+
+<div class="message">
+	{{snippet.title}}
+	<br /><br />
+	<iframe width="250" height="150" src="http://www.youtube.com/embed/{{contentDetails.upload.videoId}}"></iframe>
+	<br /><br />
+	{{snippet.description}}
+</div>

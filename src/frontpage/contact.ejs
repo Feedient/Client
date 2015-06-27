@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include ../shared/views/head %>
+	</head>
+
+	<body>
+		<% include views/top %>
+
+		<header class="small general">
+			<h1>Contact</h1>
+		</header>
+
+		<section class="content-wrapper min">
+			<section class="center center-small">
+				<form id="contact-form" method="post">
+					<label for="contact_name">Name</label>
+					<input type="text" name="contact_name" id="contact_name">
+
+					<label for="contact_email">Email address</label>
+					<input type="email" name="contact_email" id="contact_email">
+
+					<label for="contact_cause">Select cause</label>
+					<select name="contact_cause" id="contact_cause">
+						<option value="CONTACT_CAUSE_SUPPORT" selected>Support</option>
+						<option value="CONTACT_CAUSE_PRESS">Press inquiries</option>
+						<option value="CONTACT_CAUSE_BUGS">Bug reports</option>
+						<option value="CONTACT_CAUSE_SUGGESTIONS">Feature suggestions</option>
+						<option value="CONTACT_CAUSE_OTHER">Other</option>
+					</select>
+
+					<div id="suggestions">
+						<i class="fa fa-info"></i> &nbsp;For feature suggestions, please use <a href="http://feedient.uservoice.com/forums/234008-general">our suggestions page</a>.
+					</div>
+					
+					<div id="form-bottom">
+						<label for="contact_message">Message</label>
+						<textarea name="contact_message" id="contact_message" rows="7"></textarea>
+
+						<input type="submit" value="SUBMIT MESSAGE">
+					</div>
+
+					<div id="contact-error" class="bottom-message"></div>
+
+					<div style="height:20px;"></div>
+				</form>
+			</section>
+		</section>
+				
+		<% include views/modals %>
+		<% include views/footer %>
+	</body>
+</html>

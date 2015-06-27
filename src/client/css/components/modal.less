@@ -1,0 +1,150 @@
+@scaleFrom: 0.6;
+
+@keyframes show-modal {
+	from { opacity:0; transform: scale(@scaleFrom); }
+	to { opacity:1; transform: scale(1); }
+}
+
+@-webkit-keyframes show-modal {
+	from { opacity:0; -webkit-transform: scale(@scaleFrom); }
+	to { opacity:1; -webkit-transform: scale(1);  }
+}
+
+@-moz-keyframes show-modal {
+	from { opacity:0; -moz-transform: scale(@scaleFrom); }
+	to { opacity:1; -moz-transform: scale(1);  }
+}
+
+@-ms-keyframes show-modal {
+	from { opacity:0; -ms-transform: scale(@scaleFrom); }
+	to { opacity:1; -ms-transform: scale(1);  }
+}
+
+.close-modal {
+	float:right;
+	font-size:16px;
+}
+
+#modal-bg {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-color:#000;
+	z-index:9999;
+	opacity:0;
+	display:none;
+}
+
+#modal {
+	padding:30px;
+	position:absolute;
+	overflow:auto;
+	left:50%;
+	margin-left:-180px;
+	width:300px;
+	background-color:#fff;
+	border-radius:3px;
+	display:none;
+	z-index:99999;
+
+	p {
+		line-height:1.5;
+		font-size:16px;
+		color:#666;
+	}
+
+	h1 {
+		font-size:24px;
+		font-weight:200;
+		margin-bottom:30px/2;
+		padding-bottom:30px/2;
+		border-bottom:1px solid #ccc;
+
+		i {
+			margin-right:5px;
+		}
+	}
+
+	&.show-modal {
+		display:block;
+		animation:show-modal 0.5s;
+		-webkit-animation:show-modal 0.5s;
+		-moz-animation:show-modal 0.5s;
+		-ms-animation:show-modal 0.5s;
+	}
+
+	.button {
+		display:inline-block;
+		font-size:14px;
+	}
+	
+	.button-inactive {
+		pointer-events: none;
+        cursor: default;
+		background-color: #ccc;
+		border-color: #ccc;
+	}
+}
+
+.modal-active {
+	opacity:0.2;
+}
+
+
+/* Ad removal */
+#ad-plans li {
+	padding: 15px;
+	background-color: #F7F7F7;
+	border: 1px solid #DBDBDB;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	cursor: pointer;
+
+	input {
+		margin-right: 10px;
+	}
+
+	&:hover {
+		border-color: #999;
+	}
+
+	&.selected {
+		border-color: #1ead91;
+		font-weight: bold;
+		color: #1ead91;
+		background-color: #fff;
+
+		&:hover {
+			border-color: #1ead91;
+		}
+	}
+}
+
+#ad-plans li:last-child {
+	margin-bottom: 0;
+}
+
+#ad-plans li .price-tag {
+	font-weight: bold;
+}
+
+#ad-plans .sale-tag {
+	color: #fff;
+	font-weight: bold;
+	padding-left: 10px;
+	border-radius: 2px;
+	position: absolute;
+	text-transform: uppercase;
+	background-color: #BD3636;
+	padding: 5px 10px;
+	font-size: 12px;
+	right: 22px;
+	margin-top: -30px;
+
+	&.sale-tag-extra {
+		background-color: #1E87AD !important;
+	}
+}

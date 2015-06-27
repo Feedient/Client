@@ -1,0 +1,29 @@
+<a href="javascript:void(0)" class="toast">
+	<div class="right" class="close-link">
+		<i class="fa fa-times"></i>
+	</div>
+
+	<div class="left">
+		<span class="avatar" target="_blank">
+			<img src="{{post.user_from.image}}" alt="{{post.user_from.name}}">
+		</span>
+	</div>
+
+	<span class="name" target="_blank">
+		<span class="real-name">{{post.user_from.name}}</span>
+		
+		{{#if post.user_from.name_formatted}}
+			<span class="username">{{post.user_from.name_formatted}}</span>
+		{{/if}}
+	</span><br>
+
+	<span class="message">
+		{{shorten post.content.message 38}}
+	</span>
+
+	<div class="provider">
+		<i class="{{provider.icon}}"></i> {{provider.name}}
+	</div>
+
+	<div class="clear"></div>
+</a>

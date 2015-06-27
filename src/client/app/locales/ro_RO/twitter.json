@@ -1,0 +1,18 @@
+{
+    "conversation": "Conversație",
+	"details": "Arată detaliile",
+	"retweeted": "Redistribuiți",
+	"retweetsCAPS": "REDISTRIBUIRI",
+	"favoritesCAPS": "FAVORITE",
+	"retweeted": "Redistribuit",
+	"retweet": "Redistribuire",
+	"favorite": "Favorit",
+	"favorited": "Favorit",
+	"tweet": "Tweet",
+	"confirmRetweet": {
+        "header": "Redistirbuire",
+        "confirm": "Sunteți sigur că doriți redistribuirea acestui tweet?",
+        "cancel": "Anulează",
+        "retweet": "Redistribuie"
+    }
+}

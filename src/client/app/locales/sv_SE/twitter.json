@@ -1,0 +1,18 @@
+{
+    "conversation": "Konversation",
+	"details": "Visa detaljer",
+	"retweeted": "retweetad",
+	"retweetsCAPS": "RETWEETS",
+	"favoritesCAPS": "FAVORITER",
+	"retweeted": "Retweeted",
+	"retweet": "Retweeta",
+	"favorite": "Favoritmarkera",
+	"favorited": "Favoritmarkerad",
+	"tweet": "Twittra",
+	"confirmRetweet": {
+        "header": "Retweeta",
+        "confirm": "Är du säker på att du vill retweeta denna tweet?",
+        "cancel": "Avbryt",
+        "retweet": "Retweeta"
+    }
+}

@@ -1,0 +1,5 @@
+{{#unless isLightbox}}
+	<a href="javascript:void(0)" onClick="app.lib.ui.lightbox('{{parent.provider._id}}', '{{id}}', '{{formatFacebookPictureURL picture}}', 'facebook')" class="post-image img-small" target="_blank" style="background-image:url({{formatFacebookPictureURL picture}})"></a>
+{{/unless}}
+
+{{#if description}}<div class="context-image-description">{{description}}</div>{{/if}}

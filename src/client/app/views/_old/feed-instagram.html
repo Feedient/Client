@@ -1,0 +1,19 @@
+{{#each posts}}
+	<article class="post">
+		<div class="special"></div>
+
+		{{> instagramPost}}
+
+		<section class="actions">
+			<div class="right">
+				<a href="javascript:void(0)" onClick="">{{i18n 'instagram:like' }}</a>
+				<a href="javascript:void(0)" onClick="">{{i18n 'comment' }}</a>
+			</div>
+
+			<a href="javascript:void(0)" onClick=""><i class="fa fa-heart"></i> {{likes.count}} {{i18n 'likes' }}</a>
+			<div class="clear"></div>
+		</section>
+	</article>
+{{else}}
+	<div class="content">{{i18n 'noPic' }}</div>
+{{/each}}

@@ -1,0 +1,8 @@
+User-agent: *
+<% if(public) { %>
+Disallow: /app/*
+Disallow: /recover
+Sitemap: http://feedient.com/sitemap.xml
+<% } else { %>
+Disallow: /
+<% } %>

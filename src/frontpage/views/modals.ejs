@@ -1,0 +1,89 @@
+<noscript>
+	<a style="padding:20px;background-color:#E43737;text-align:center;font-size:16px;font-weight:bold;color:#fff;display:block;" href="http://www.enable-javascript.com/" target="_blank" rel="nofollow">Please enable JavaScript to use Feedient.</a>	
+</noscript>
+
+<div class="modal"></div>
+<div class="modal-bg"></div>
+
+<div id="offline-modal" class="modal">
+	<h1><i class="fa fa-cloud-download"></i>  Server is offline</h1>
+	<span style="line-height: 1.5;color:#333;">We were unable to connect to our server. Please try again.</span>
+</div>
+
+<div id="login-modal" class="modal">
+	<!--[if lte IE 9]>
+		<h1>Your web browser is too old</h1>
+		<div style="line-height:1.5;color:#333;">
+			<p>Feedient is built upon modern web technology and therefore needs to be visited from a modern web browser. Your browser does not support all the technology we make use of.</p>
+
+			<p><strong>Please upgrade to a faster and more powerful web browser.</strong></p>
+
+			<div style="height:70px;">
+				<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank" style="margin-right:20px;"><img width="70" src="/app/images/browsers-large/chrome.png" alt="Chrome"></a>
+				<a href="http://www.mozilla.org/firefox/" target="_blank" style="margin-right:20px;"><img  width="70"src="/app/images/browsers-large/firefox.png" alt="Firefox"></a>
+				<a href="http://www.opera.com/" target="_blank"><img  width="70"src="/app/images/browsers-large/opera.png" alt="Opera"></a>
+			</div>
+		</div>
+		<div style="display:none;">
+	<![endif]-->
+
+	<form action="" id="login-form">
+		<h1><i class="fa fa-lock"></i> Log in</h1>
+		<label for="login-email">Email address</label>
+		<input type="email" spellcheck="false" name="login-email" id="login-email">
+		<label for="login-password">Password</label>
+		<input type="password" spellcheck="false" name="login-password" id="login-password">
+		<input type="submit" value="LOG IN">
+		<a href="javascript:void(0)" onClick="window.resetPassword()" class="bottom-link">Forgot your password?</a>
+		<div id="login-form-error"></div>
+	</form>
+
+	<form action="" id="reset-form" style="display:none;">
+		<h1><i class="fa fa-lock"></i> Recover password</h1>
+		<label for="reset-email">Email address</label>
+		<input type="email" spellcheck="false" name="reset-email" id="reset-email">
+		<input type="submit" value="RECOVER PASSWORD">
+		<a href="javascript:void(0)" onClick="window.resetLoginForm()" class="bottom-link">Go back to log in</a>
+		<div id="reset-form-error"></div>
+	</form>
+
+	<!--[if lte IE 9]>
+		</div>
+	<![endif]-->	
+</div>
+
+<div id="signup-modal" class="modal">
+	<!--[if lte IE 9]>
+		<h1>Your web browser is too old</h1>
+		<div style="line-height:1.5;color:#333;">
+			<p>Feedient is built upon modern web technology and therefore needs to be visited from a modern web browser. Your browser does not support all the technology we make use of.</p>
+
+			<p><strong>Please upgrade to a faster and more powerful web browser.</strong></p>
+
+			<div style="height:70px;">
+				<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank" style="margin-right:20px;"><img width="70" src="/app/images/browsers-large/chrome.png" alt="Chrome"></a>
+				<a href="http://www.mozilla.org/firefox/" target="_blank" style="margin-right:20px;"><img  width="70"src="/app/images/browsers-large/firefox.png" alt="Firefox"></a>
+				<a href="http://www.opera.com/" target="_blank"><img  width="70"src="/app/images/browsers-large/opera.png" alt="Opera"></a>
+			</div>
+		</div>
+		<div style="display:none;">
+	<![endif]-->
+	<form action="" id="signup-form">
+		<h1><i class="fa fa-user"></i> Sign up</h1>
+		<label for="signup-email">Email address</label>
+		<input type="email" spellcheck="false" name="signup-email" id="signup-email">
+		<label for="signup-password">Password</label>
+		<input type="password" spellcheck="false" name="signup-password" id="signup-password">
+
+		<% if (config.inviteOnly) { %>
+		<label for="invitation-key">Invitation key <a href="#pre-release" onClick="window.hideModal()"><i class="fa fa-question"></i></a></label>
+		<input type="text" spellcheck="false" name="invitation-key" id="invitation-key">
+		<% } %>
+		<label for="signup-terms" class="checkbox-label"><input type="checkbox" name="signup-terms" id="signup-terms"> I accept the <a href="legal" target="_blank">Terms of Service</a></label>
+		<input type="submit" value="SIGN UP">
+		<div id="signup-form-error"></div>
+	</form>
+	<!--[if lte IE 9]>
+		</div>
+	<![endif]-->	
+</div>

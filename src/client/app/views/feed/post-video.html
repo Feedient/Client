@@ -1,0 +1,22 @@
+<div class="feedient-{{provider.providerName}} {{provider.providerName}}-pushout">
+	{{{post}}}
+
+	<div class="pushout-actions" id="pushout-{{ provider.id }}-{{postData.id}}">
+		{{#each provider.actions.list }}
+			{{#if performed_key}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.{{method}}('{{../../postData.id}}', this, true)" class="{{method}}-button {{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}color-{{performed_key}}{{/ifValueIsTrue}}">
+					<i class="{{icon}}"></i>
+					{{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}
+						{{text.performed}}
+					{{else}}
+						{{text.normal}}
+					{{/ifValueIsTrue}}
+				</a>
+			{{/if}}
+		{{/each}}
+	</div>
+
+	<div class="pushout-actions" id="lightbox-{{ provider.id }}-{{postData.id}}-action-count" style="display:none;"></div>
+
+	<!-- Comments should go here -->
+</div>

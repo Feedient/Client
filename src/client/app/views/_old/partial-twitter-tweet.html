@@ -1,0 +1,38 @@
+<div class="left">
+	<a href="http://twitter.com/{{user.screen_name}}" class="avatar" target="_blank">
+		<img src="{{user.profile_image_url_https}}" alt="{{user.name}}">
+	</a>
+
+	<a href="http://twitter.com/{{user.screen_name}}/status/{{id_str}}" class="time" target="_blank" data-timestamp="{{created_at}}">{{timeFormat created_at}}</a>
+</div>
+
+<a href="http://twitter.com/{{user.screen_name}}" class="name" target="_blank">
+	{{user.name}}
+	<span class="username">@{{user.screen_name}}</span>
+</a>
+
+<div class="message">
+	{{{twitterText text entities}}}
+</div>
+
+{{#unless isLightbox}}
+	{{#if entities.media}}
+		{{#biggerThan entities.media.length 1}}<div class="post-multi-images">{{/biggerThan}}
+		{{#each entities.media}}
+			<a href="javascript:void(0)" onClick="app.lib.ui.lightbox('{{../parent.provider._id}}', '{{../id_str}}', '{{media_url_https}}:large', 'twitter')" class="post-image" target="_blank" style="background-image:url({{media_url_https}})"></a>
+		{{/each}}
+		{{#biggerThan entities.media.length 1}}</div>{{/biggerThan}}
+	{{/if}}
+{{/unless}}
+
+{{#ifEither retweet_count favorite_count}}
+<section class="twitter-stats">
+	{{#if retweet_count}}
+		<a><strong>{{retweet_count}}</strong> {{i18n 'twitter:retweetsCAPS' }}</a>
+	{{/if}}
+
+	{{#if favorite_count}}
+		<a><strong>{{favorite_count}}</strong> {{i18n 'twitter:favoritesCAPS' }}</a>
+	{{/if}}
+</section>
+{{/ifEither}}

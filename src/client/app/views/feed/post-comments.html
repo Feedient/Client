@@ -1,0 +1,38 @@
+<div class="feedient-{{provider.providerName}} {{provider.providerName}}-pushout">
+	{{{post}}}
+
+	<div class="pushout-actions" id="pushout-{{ provider.id }}-{{postData.id}}">
+		{{#each provider.actions.list }}
+			{{#if performed_key}}
+				<a href="javascript:void(0)" onClick="app.lib.user.getProvider('{{../../provider._id}}').actions.{{method}}('{{../../postData.id}}', this, true)" class="{{method}}-button {{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}color-{{performed_key}}{{/ifValueIsTrue}}">
+					<i class="{{icon}}"></i>
+					{{#ifValueIsTrue performed_key ../../postData.content.actions_performed}}
+						{{text.performed}}
+					{{else}}
+						{{text.normal}}
+					{{/ifValueIsTrue}}
+				</a>
+			{{/if}}
+		{{/each}}
+	</div>
+
+	<div class="pushout-actions" id="{{#if elementId}}{{elementId}}{{else}}pushout{{/if}}-{{ provider.id }}-{{postData.id}}-action-count" style="display:none;"></div>
+
+	<div class="comments">
+		<form onSubmit="app.lib.user.getProvider('{{ provider.id }}').actions.submitComment('{{ postData.id }}' {{#if elementId}}, '{{elementId}}'{{/if}})">
+			<textarea id="comment-text-{{ provider.id }}-{{ postData.id }}" placeholder="Write a comment..."></textarea>
+			<div class="bottom">
+				<div class="right">
+					<a href="javascript:void(0)" onclick="app.lib.user.getProvider('{{ provider.id }}').actions.submitComment('{{ postData.id }}' {{#if elementId}}, '{{elementId}}'{{/if}})" class="button right">{{i18n 'facebook:comment' }}</a>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+				<div id="comment-loading-{{ provider.id }}-{{ postData.id }}" class="inline-loading" style="display:none;"></div>
+			</div>
+		</form>
+
+		<div id="{{#if elementId}}{{elementId}}{{else}}pushout{{/if}}-comments-{{ provider.id }}-{{ postData.id }}" class="pushout-comments">
+			<div class="inline-loading"></div>
+		</div>
+	</div>
+</div>

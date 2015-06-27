@@ -1,0 +1,244 @@
+@facebookColor: #3b5998;
+
+.comments {
+	form {
+		padding:20px;
+		padding-bottom:0px;
+	}
+
+	.comment {
+		padding:15px 20px;
+		border-top:1px solid @border;
+		font-size:12px;
+
+		.avatar {
+			float:left;
+			display:block;
+			margin-right:10px;
+
+			img {
+				width:42px;
+				border-radius:3px;
+			}
+		}
+
+		.comment-content {
+			float:left;
+			width:280px;
+			color:@text;
+			line-height:1.5;
+		}
+
+		.comment-author {
+			font-weight:bold;
+			display:block;
+			margin-bottom:5px;
+		}
+
+		.comment-footer {
+			font-size:12px;
+			color:#666;
+			margin-top:5px;
+			font-weight:bold;
+
+			span {
+				margin-right:5px;
+			}
+		}
+	}
+}
+
+.feedient-facebook {
+	.pushout-actions {
+		.color-liked {
+			border-color:@facebookColor !important;
+			background-color:@facebookColor !important;
+			color:#fff !important;
+
+			&:hover {
+				color:#3b5998 !important;
+				background-color:transparent !important;
+			}
+		}
+	}
+}
+
+.feedient-facebook {
+	h1, a, .link-placeholder {
+		color:@facebookColor;
+	}
+
+	a:hover {
+		color:darken(@facebookColor, 15%);
+	}
+
+	.post {
+		&:hover, &.active-post {
+			.actions {
+				a {
+					color:@facebookColor;
+				}
+			}
+		}
+
+		.message {
+			min-height:50px;
+		}
+
+		.name {
+			display:inline-block;
+			max-width: 286px;
+		}
+
+		.names i {
+			margin-left:5px;
+			margin-right:5px;
+		}
+
+		.facebook-video {
+			display:inline-block;
+			border:1px solid @border;
+			border-radius:3px;
+			padding:5px;
+			color:@text;
+			clear:both;
+			width:270px;
+
+			.video-play {
+				position:absolute;
+				font-size:32px;
+				color:#fff;
+				width:35px;
+				height:35px;
+				text-align:center;
+				margin-top:12px;
+				margin-left:14px;
+				border-radius:6px;
+				text-shadow:0px 0px 4px #000;
+			}
+
+			.video-thumbnail {
+				border-radius:2px;
+				width:60px;
+				height:60px;
+				float:left;
+				margin-right:5px;
+				background-size:cover;
+				background-position:center;
+			}
+
+			.video-title {
+				font-weight:bold;
+				color:@facebookColor;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				display:-webkit-box;
+				-webkit-line-clamp:1; // number of lines to show
+				-webkit-box-orient:vertical;
+			}
+
+			.video-length {
+				font-size:12px;
+				margin-top:5px;
+			}
+
+			.video-description {
+				font-size:12px;
+				overflow:hidden;
+				text-overflow:ellipsis;
+				display:-webkit-box;
+				-webkit-line-clamp:1; // number of lines to show
+				-webkit-box-orient:vertical;
+				margin-top:5px;
+			}
+		}
+
+
+		.extended-link {
+			display:inline-block;
+			border:1px solid @border;
+			border-radius:3px;
+			padding:10px;
+			color:@text;
+			clear:both;
+			background-color:#fff;
+			line-height:1.5;
+
+			&.extended-link-wide {
+				width:330px;
+			}
+
+			.link-thumbnail {
+				float:left;
+				width:50px;
+				height:40px;
+				background-size:cover;
+				margin-right:10px;
+				border-radius:2px;
+				background-position: center;
+			}
+
+			.link-title {
+				font-weight:bold;
+				color:@facebookColor;
+				overflow:hidden;
+				text-transform:uppercase;
+				font-size:16px;
+				text-overflow:ellipsis;
+				display:-webkit-box;
+				-webkit-line-clamp:1; // number of lines to show
+				-webkit-box-orient:vertical;
+			}
+
+			.link-domain {
+				font-size:12px;
+				font-weight:bold;
+				color:#3C3C3C;
+			}
+
+			.link-description {
+				font-size:12px;
+				overflow:hidden;
+				margin-top:5px;
+			}
+		}
+	}
+}
+
+.facebook-color {
+	color:@facebookColor;
+}
+
+.button.feedient-facebook-button {
+	background-color:@facebookColor;
+	border-color:@facebookColor;
+	text-align:left;
+
+	&:hover {
+		color:@facebookColor;
+	}
+}
+
+.feedient-facebook {
+	.color-liked {
+		color:@facebookColor !important;
+	}
+}
+
+#compose-accounts .facebook-toggle {
+		background-color:@facebookColor;
+		border-color:@facebookColor;
+
+		&:hover {
+			background-color:darken(@facebookColor, 15%);
+			border-color:darken(@facebookColor, 15%);
+		}
+
+		&.toggle-off {
+			color:@facebookColor;
+
+			&:hover {
+				border-color:@facebookColor;
+			}
+		}
+	}

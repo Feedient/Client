@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "Opa, n&atilde;o h&aacute; nada aqui",
+        "content":  "N&atilde;o conseguimos encontrar a p&aacute;gina que voc&ecirc; procura."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Erros &agrave; frente...",
+            "welcome": "Bem vindo ao Feedient!",
+            "content": "Esta &eacute; uma vers&atilde;o em desenvolvimento do nosso aplicativo, apenas algumas coisas est&atilde;o funcionando. Caso encontre erros ou queira sugerir novas funcionalidade, sinta-se &agrave; vontade para utilizar o menu Feedback &agrave; esquerda.",
+            "footer":  "Sauda&ccedil;&otilde;es, Equipe Feedient",
+            "close":   "Fechar janela"
+        },
+        "development": {
+            "header": "Ainda n&atilde;o...",
+            "content": "n&atilde;o est&aacute; dispon&iacute;vel na vers&atilde;o atual do Feedient. Por favor, tente outro dia."
+        }
+    },
+    "api": {
+        "auth": "Erro de autentica&ccedil;&atilde;o",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Nossos servidores se sentiram um pouco mal e pararam de funcionar. Por favor, tente novamente. Caso o problema persista, por favor ",
+            "contentlink": "nos informe"
+        },
+        "404": {
+            "header": "P&aacute;gina n&atilde;o encontrada...",
+            "content": "A p&aacute;gina solicitada n&atilde;o foi encontrada."
+        },
+        "general": {
+            "header": "Acho que ca&iacute;mos...",
+            "content": "N&atilde;o conseguimos lhe conectar ao servidor. Por favor, tente novamente."
+        }
+    },
+    "feed": {
+        "load": "N&atilde;o conseguimos carregar seus posts.",
+        "responded": "respondeu com o seguinte erro:",
+        "tryAgain": "Por favor, tente novamente em instantes."
+    }
+}

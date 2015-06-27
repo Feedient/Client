@@ -1,0 +1,157 @@
+@youtubeColor: #cd332d;
+
+.youtube-toggle { display:none; }
+
+#lightbox.feedient-youtube {
+	.title {
+		font-size:20px;
+		margin-top:0;
+	}
+
+	.post { width:auto; }
+
+	.message {
+		width:100%;
+		overflow:auto;
+	}
+}
+
+.feedient-youtube {
+	.color-liked { color:@primaryColor !important; }
+	.color-disliked { color:@youtubeColor !important; }
+
+	.pushout-actions {
+		.color-liked {
+			border-color:@primaryColor !important;
+			background-color:@primaryColor !important;
+			color:#fff !important;
+
+			&:hover {
+				color:@primaryColor !important;
+				background-color:transparent !important;
+			}
+		}
+
+		.color-disliked {
+			border-color:@youtubeColor !important;
+			background-color:@youtubeColor !important;
+			color:#fff !important;
+
+			&:hover {
+				color:@youtubeColor !important;
+				background-color:transparent !important;
+			}
+		}
+	}
+	
+	h1, a {
+		color:@youtubeColor;
+	}
+
+	a:hover {
+		color:darken(@youtubeColor, 15%);
+	}
+
+	.post {
+		&:hover {
+			.actions {
+				a {
+					color:@youtubeColor;
+				}
+			}
+		}
+
+		.top {
+			font-size:12px;
+
+			.avatar {
+				float:left;
+				margin-right:10px;
+
+				img {
+					width:22px;
+					height:22px;
+				}
+			}
+
+			.name {
+				display:inline;
+			}
+		}
+
+		.post-image, .actions {
+			margin-top:10px;
+		}
+
+		.post-image {
+			img {
+				height:160px;
+			}
+
+			&:hover {
+				.play-overlay {
+					opacity:1;
+				}
+			}
+		}
+
+		.play-overlay {
+			opacity:0;
+			position:absolute;
+			text-align:center;
+			padding-top:65px;
+			color:#fff;
+			font-size:32px;
+			background-color:rgba(0,0,0,0.5);
+			border-radius:2px;
+			height:95px;
+			display:inline-block;
+			width:285px;
+		}
+
+		.title {
+			margin-top:10px;
+			color:@youtubeColor;
+			font-weight:bold;
+			line-height:1.5;
+			display:block;
+		}
+		
+		.view-count {
+			float: left;	
+			font-size:14px;
+			font-weight:bold;
+			color:#666;
+		}
+
+		.video-context {
+			padding-top:6px;
+			color:@text;
+		}
+
+		.time {
+			font-size:12px;
+			padding-top:1px;
+		}
+
+		.message {
+			margin-top:5px;
+			min-height:0;
+			width: 100%;
+		}
+	}
+}
+
+.youtube-color {
+	color:@youtubeColor;
+}
+
+.button.feedient-youtube-button {
+	background-color:@youtubeColor;
+	border-color:@youtubeColor;
+	text-align:left;
+
+	&:hover {
+		color:@youtubeColor;
+	}
+}

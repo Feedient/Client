@@ -1,0 +1,142 @@
+// Reset
+body, h1, h2, h3, h4, h5, h6, ul, li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+body {
+	font-family:@fontFamily;
+	font-size:@fontSize;
+}
+
+.disable-hover,
+.disable-hover * {
+	pointer-events: none !important;
+}
+
+a {
+	text-decoration:none;
+	color:#666;
+
+	&:hover {
+		color:#000;
+	}
+}
+
+a img {
+	border:none;
+}
+
+.clear {
+	clear:both;
+}
+
+*:focus {
+	outline:none;
+}
+
+#loading {
+	position:absolute;
+	left:85px;
+	right:0;
+	top:0;
+	bottom:0;
+	overflow:auto;
+	height:100%;
+	background-color:#fff;
+	z-index:999;
+	background-image:url(../images/load.gif);
+	background-size:32px 32px;
+	background-position:20px 20px;
+	background-repeat:no-repeat;
+	.customTransition(0.5s opacity);
+}
+
+.inline-loading {
+	margin:50px;
+	background-image:url(../images/load.gif);
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:32px 32px;
+	height:32px;
+}
+
+.right {
+	float:right;
+}
+
+#logo {
+	display:block;
+	width:26px;
+	background-image:url(../images/logo.png);
+	height:59px;
+	background-size:26px 118px;
+	background-position:0px 0px;
+	position:fixed;
+	bottom:29px;
+	left:29px;
+
+	&:hover {
+		background-position:0px 59px;
+	}
+}
+
+#ads {
+	/*left:85px;*/
+	right:0;
+
+	width:160px;
+	padding:20px;
+	overflow:hidden;
+	top:0px;
+	bottom:0px;
+	background-color:#FFFFFF;
+	position:absolute;
+	box-shadow:0px 0px 15px #999 inset;
+}
+
+.button {
+	&.disabled-button, &.button-inactive {
+		background-color:#ccc !important;
+		border-color:#ccc !important;
+		color:#333 !important;
+		pointer-events: none;
+        cursor: default;
+	}
+
+	&.secondary-button {
+		background-color:#ccc !important;
+		border-color:#ccc !important;
+		color:#333 !important;
+	}
+	
+	&.secondary-button:hover {
+		color:@primaryColor !important;
+		border-color:@primaryColor !important;
+		background-color:transparent !important;
+	}
+}
+
+.fa-map-marker {
+	color: @primaryColor;
+}
+
+@media only screen and (max-height: 660px) {
+	#logo {
+		display:none;
+	}
+}
+
+#ad-explanation {
+	display: block;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: #999;
+	font-size: 12px;
+
+	&:hover {
+		color: #000;
+	}
+}

@@ -1,0 +1,61 @@
+{
+	"yes": "ja",
+	"no":  "nej",
+    "nav": {
+        "feeds":    "Flöden",
+        "settings": "Inställning.",
+        "feedback": "Feedback",
+        "logout":   "Logga ut"
+    },
+    "misc": {
+        "loading":  "Laddar..."
+    },
+    "compose": {
+        "header": "Skriv inlägg",
+        "postTo1": "Publicera på (",
+        "postTo2": "markerade)",
+        "messageHeader": "Meddelande",
+        "messageButton": "Skicka inlägg",
+        "photo": "Bilduppladdning är inte tillgängligt i denna version av Feedient. Vänligen försök igen senare."
+    },
+	"index": {
+		"scroll": "Scrolla upp",
+		"close":  "Stäng"
+	},
+	"logout": {
+		"logout": "Logga ut",
+		"sure":   "Är du säker på att du vill logga ut?",
+		"cancel": "Avbryt",
+		"confirm":    "Ja, logga ut"
+	},
+	"premium":{
+		"header": "Det här är en premium-funktion.",
+		"content":    "Premium är inte tillgängligt i denna version av Feedient. Vänligen försök igen senare."
+	},
+	"settings":{
+		"accounts":   "Konton",
+		"disconnect": "Ta bort",
+		"addAccount": "Lägg till konto",
+		"FeedientAccount":    "Feedient-konto",
+		"email":  "E-postadress",
+        "language": {
+            "label":    "Språk",
+            "button":   "Spara språk"    
+        },
+		"password": {
+			"current":  "Nuvarande lösenord",
+			"new":      "Nytt lösenord",
+			"repeat":   "Upprepa nytt lösenord",
+            "button":   "Spara inställningar"
+		},
+		"updated":    "Ditt konto har ändrats",
+		"updated_language": "Sparat! Laddar om Feedient...",
+		"sessions": {
+			"header":    "Aktiva sessioner",
+			"explanation":   "Varje gång du loggar in skapas en ny användarsession för din webbläsare. Om du vill logga ut för någon av dessa sessioner kan du enkelt ta bort sessionen från listan nedan.",
+			"lastActive":    "Senast aktiv: ",
+			"disconnect":    "Logga ut för denna session",
+			"clear": "Logga ut alla sessioner"
+		}
+	}
+}

@@ -1,0 +1,114 @@
+header.about {
+	background-image:url(../images/about/header.jpg);
+}
+
+#ceo-words {
+	p {
+		color:#fff;
+		font-size:16px;
+	}
+
+	.name {
+		font-weight:bold;
+		font-size:16px;
+		text-align:right;
+		margin-right:10%;
+	}
+
+	.title {
+		opacity:0.7;
+		text-align:right;
+		margin-right:10%;
+	}
+}
+
+#team {
+	text-align:center;
+
+	li {
+		display:inline-block;
+		padding:10px 40px;
+
+		img {
+			background-color:@primaryColor;
+			border-radius:70px;
+			height:140px;
+			width:140px;
+		}
+
+		h2 {
+			font-size:20px;
+			font-weight:normal;
+			margin-top:10px;
+		}
+
+		.title {
+			font-weight:bold;
+			color:#666;
+			font-size:14px;
+			margin-top:0px;
+		}
+
+		.avatar {
+			width:140px;
+			height:140px;
+			background-size:140px;
+			display:block;
+			border-radius:140px;
+			/*border:1px solid #D8D8D8;*/
+			background-color: #D8D8D8;
+		}
+
+		.social {
+			margin-left:5px;
+
+			a {
+				font-size:16px;
+
+				.fa-twitter {
+					color:#55acee;
+				}
+
+				.fa-linkedin-square {
+					color:#0976b4;
+				}
+			}
+		}
+	}
+}
+
+#feedient-accounts {
+	text-align:center;
+
+	a {
+		padding:10px;
+		font-weight:bold;
+		font-size:20px;
+
+		&.twitter {
+			color:#55acee;
+
+			&:hover {
+				color:darken(#55acee, 10%);
+			}
+		}
+
+		&.facebook {
+			color:#3b5998;
+
+			&:hover {
+				color:darken(#3b5998, 10%);
+			}
+		}
+	}
+}
+
+#jesper { background-image:url(../images/about/jesper.png); }
+#xavier { background-image:url(../images/about/xavier.png); }
+#adri { background-image:url(../images/about/adri.png); }
+
+@media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+	#jesper { background-image:url(../images/about/jesper@2x.png); }
+	#xavier { background-image:url(../images/about/xavier@2x.png); }
+	#adri { background-image:url(../images/about/adri@2x.png); }
+}

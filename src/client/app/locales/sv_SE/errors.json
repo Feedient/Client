@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "Oj, det finns ingenting här",
+        "content":  "Vi kunde inte hitta sidan du letade efter."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Bugg-varning...",
+            "welcome": "Välkommen till Feedient!",
+            "content": "Det här är en tidig version av vår webbapplikation, med endast ett fåtal funktioner färdiga. Om du stöter på några problem eller har förslag, använd Feedback-knappen till vänster.",
+            "footer":  "Bästa hälsningar, Feedient-teamet",
+            "close":   "Stäng fönster"
+        },
+		"development": {
+			"header": "Inte riktigt ännu...",
+			"content": "är inte tillgänglig i denna version av Feedient. Vänligen försök igen senare."
+		}
+    },
+    "api": {
+        "auth": "Auktoriseringsfel",
+        "500": {
+            "header": "Host, host...",
+            "content": "Våra servrar verkar inte må så bra och stötte på ett fel. Vänligen försök igen senare. om problemet kvarstår ",
+            "contentlink": "säg till oss"
+        },
+        "404": {
+            "header": "Sidan kunde inte hittas...",
+            "content": "Sidan du sökte kunde inte hittas."
+        },
+        "general": {
+            "header": "Vi verkar ligga nere...",
+            "content": "Vi kunde inte ansluta till vår server. Vänligen försök igen."
+        }
+    },
+    "feed": {
+        "load": "Vi kunde inte ladda dina inlägg.",
+        "responded": "svarade med följande felmeddelande:",
+        "tryAgain": "Vänligen försök igen senare."
+    }
+}

@@ -1,0 +1,66 @@
+﻿{
+	"yes": "oui",
+	"no":  "non",
+    "nav": {
+        "feeds":    "Flux",
+        "settings": "Paramètres",
+        "feedback": "Avis",
+        "logout":   "Déconnexion"
+    },
+    "misc": {
+        "loading":  "Chargement...",
+        "help": "Aide",
+        "help_sent": "Message envoy&eacute;! Nous repondrons a votre demande d'aide dans les plus bref d&eacute;lais.",
+        "help_subject": "Sujet",
+        "help_message": "Message",
+        "help_submit": "Envoyer"
+    },
+    "compose": {
+        "header": "Ecrire un message",
+        "postTo1": "Envoyer &agrave; (",
+        "postTo2": "sel&eacute;ction&eacute;)",
+        "messageHeader": "Message",
+        "messageButton": "Envoyer le message",
+        "photo": "Les photos ne sont pas disponible dans la version actuel de Feedient . Revenez plus tard."
+    },
+	"index": {
+		"scroll": "Revenir au d&eacute;but",
+		"close":  "Fermer"
+	},
+	"logout": {
+		"logout": "Se d&eacute;connecter",
+		"sure":   "Etes vous s�r de vouloir vous d&eacute;connetcer",
+		"cancel": "Annuler",
+		"confirm":    "Oui , se d&eacute;connecter"
+	},
+	"premium":{
+		"header": "Ceci est une fonction Pr&eacute;mium",
+		"content":    "Cependant, l'abonnement pr&eacute;mium n'est pas disponible dans la version de test. Revenez plus tard."
+	},
+	"settings":{
+		"accounts":   "Comptes",
+		"disconnect": "Deconnexion",
+		"addAccount": "Ajouter un compte",
+		"FeedientAccount":    "Compte Feedient",
+		"email":  "Adresse Email",
+        "language": {
+            "label":    "Langue",
+            "button":   "Sauveggarder la langue"    
+        },
+		"password": {
+			"current":  "Mot de passe actuel",
+			"new":      "Nouveau mot de passe",
+			"repeat":   "Confirmation du mot de passe",
+            "button":   "Enregistrer les r&eacute;glages"
+		},
+		"updated":    "Votre compte a &eacute;t&eacute; mis &agrave; jour",
+		"updated_language": "Enregistr&eacute;! Rechargement de Feedient...",
+		"sessions": {
+			"header":    "Session active",
+			"explanation":   "Chaque fois que vous vous connecter, une nouvelle session est cr&eacute;e et sauvegard&eacute;e par le naviguateur. Si vous voulez vous d&eacute;connecter &agrave; distance d'une session, enlever simplement la session depuis la liste ci-dessous.",
+			"lastActive":    "Derni&egrave;re activit&eacute;e: ",
+			"disconnect":    "D&eacute;connecter cette session",
+			"clear": "D&eacute;connecter toute les sessions"
+		}
+	}
+}

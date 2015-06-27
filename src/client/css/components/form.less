@@ -1,0 +1,104 @@
+form {
+	margin-bottom:20px;
+
+	input {
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+
+		&:focus {
+			outline:none;
+		}
+	}
+
+	textarea {
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+	}
+
+	input[type="email"], input[type="password"], input[type="text"], textarea {
+		border:1px solid #ccc;
+		border-radius:2px;
+		display:block;
+		padding:8px;
+		font-size:12px;
+		font-family:@fontFamily;
+		color:#333;
+		width:100%;
+		margin-bottom:20px;
+		.transition();
+
+		&:focus {
+			/* Shamelessly stolen from Bootstrap. Thanks! */
+			border-color:#66afe9;
+			-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+			box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+		}
+	}
+
+	input.error {
+		border-color:red !important;
+		-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+		box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6) !important;
+	}
+
+	input[type="password"] {
+		font-family:Verdana; // Better looking bullets in password field... very important stuff you know
+	}
+
+	input[disabled] {
+		border:1px dashed #ccc;
+		color:#999;
+		font-weight:bold;
+		background-color:#fff;
+	}
+
+	input[type="submit"] {
+		box-sizing: border-box; /* css3 rec */
+		-moz-box-sizing: border-box; /* ff2 */
+		-ms-box-sizing: border-box; /* ie8 */
+		-webkit-box-sizing: border-box; /* safari3 */
+		-khtml-box-sizing: border-box; /* konqueror */
+		width:100%;
+	}
+
+	label {
+		display:block;
+		font-size:12px;
+		color:#9C9C9C;
+		text-transform:uppercase;
+		font-weight:bold;
+		margin-bottom:10px;
+	}
+}
+
+.alert {
+	display:block;
+	color:#fff;
+	text-align:center;
+	font-weight:bold;
+	opacity:1;
+	padding-top:10px;
+	height:auto;
+	overflow:hidden;
+	.transition();
+
+	&.alert-success {
+		color:@primaryColor;
+	}
+
+	&.hidden {
+		padding-top:0px;
+		height:0;
+		overflow:hidden;
+		opacity:0;
+	}
+}
+
+.content-divider {
+	height:1px;
+	background-color:@border;
+}
+
+@import 'selectField.less';

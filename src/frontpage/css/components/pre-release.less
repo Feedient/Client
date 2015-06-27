@@ -1,0 +1,127 @@
+#pre-release {
+	border-top:1px solid #ccc;
+	text-align:center;
+	background-color:#fff;
+
+	.description {
+		color:#666;
+		font-size:16px;
+		line-height:1.5;
+		text-align:left;
+		display:block;
+		width:780px;
+		margin-right:auto;
+		margin-left:auto;
+		margin-bottom:@spacing;
+	}
+
+	h1 {
+		font-size:30px;
+		color:@primaryColor;
+		font-weight:normal;
+		margin-top:@spacing;
+		margin-bottom:@spacing;
+
+		i {
+			margin-right:10px;
+		}
+	}
+
+	form {
+		text-align:center;
+		margin-bottom:@spacing;
+
+		label {
+			font-size:20px;
+			color:#212323;
+			display:inline;
+			text-transform:none;
+			font-weight:normal;
+			margin-bottom:0px;
+			margin-top:0px;
+		}
+
+		input {
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+
+			&:focus {
+				outline:none;
+			}
+		}
+
+		input[type="email"] {
+			border:1px solid #ccc;
+			border-radius:3px;
+			padding:12px;
+			width:240px;
+			height:42px;
+			font-size:12px;
+			display:inline-block;
+			font-family:@fontFamily;
+			color:#333;
+			margin-left:10px;
+			font-weight:bold;
+			.transition();
+
+			&:focus {
+				// Shamelessly stolen from Bootstrap. Thanks!
+				border-color:#66afe9;
+				-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+				box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+			}
+		}
+
+		input[type="submit"] {
+			padding:10px;
+			font-weight:bold;
+			width:auto;
+			font-size:14px;
+			height:42px;
+			font-family:@fontFamily;
+			background-color:@primaryColor;
+			color:#fff;
+			border-radius:3px;
+			border:2px solid @primaryColor;
+			cursor:pointer;
+			-webkit-transform:translate(0px, 1px); // Chrome/Opera needs 1px down
+			-moz-transform:translate(0px, 2px); // Firefox needs 2px down
+			.transition();
+
+			&:hover {
+				background-color:#fff;
+				color:@primaryColor;
+			}
+		}
+	}
+}
+
+#social {
+	font-size:18px;
+	border-top:1px solid #ccc;
+	color:#666;
+	text-align:center;
+	background-color:#fff;
+
+	a {
+		font-weight:bold;
+		text-decoration:none;
+	}
+
+	.facebook {
+		color:#3b5998;
+
+		&:hover {
+			color:#263961;
+		}
+	}
+
+	.twitter {
+		color:#0084b4;
+
+		&:hover {
+			color:#004c68;
+		}
+	}
+}

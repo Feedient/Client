@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "Oops, burada hiçbir şey yok",
+        "content":  "Ulaşmak istediğiniz sayfayı bulamadık."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Hata çıkabilir...",
+            "welcome": "Feedient'e Hoş Geldiniz!",
+            "content": "Bu web uygulamamızın ilk versiyonları, sadece birkaç özellik çalışır durumda. Eğer herhangi bir hatayla karşılaşırsanız ya da bir özellik öneriniz varsa, sol kısımdaki Geribildirim butonunu kullanmaktan çekinmeyin.",
+            "footer":  "Saygılarımızla, Feedient Ekibi",
+            "close":   "Pencereyi kapat"
+        },
+		"development": {
+			"header": "Henüz değil...",
+			"content": "Feedient'in bu sürümünde kullanılamıyor. Lütfen daha sonra tekrar kontrol edin."
+		}
+    },
+    "api": {
+        "auth": "Yetkilendirme hatası",
+        "500": {
+            "header": "Öhöm, öhöm.",
+            "content": "Sunucularımız kendilerini pek iyi hissetmiyor bu yüzden de bu hatayı verdiler. Lütfen tekrar deneyin. Eğer problem devam ederse, lütfen ",
+            "contentlink": "bize bildirin"
+        },
+        "404": {
+            "header": "Sayfa bulunamadı..",
+            "content": "Talep ettiğiniz sayfa bulunamadı."
+        },
+        "general": {
+            "header": "Buradan çalışmıyor gibi görünüyor...",
+            "content": "Sunucularımıza bağlanamadık. Lütfen tekrar deneyin."
+        }
+    },
+    "feed": {
+        "load": "Gönderilerinizi yükleyemedik.",
+        "responded": " şu hatayı verdi:",
+        "tryAgain": "Lütfen daha sonra tekrar deneyin."
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "404": {
+        "header":   "Oops, no hay nada por aquí.",
+        "content":  "No pudimos encontrar la páginas que buscabas."
+    },
+    "warnings": {
+        "alpha": {               
+            "header":  "Bugs ahead...",
+            "welcome": "Bienvenido a Feedient!",
+            "content": "Esta es una versión incompleta de nuestra plataforma, con solo unas pocas horas de trabajo. Si encontrás algún error en el sitio o requerís de alguna herramienta que no esta disponible, sentite libre de enviarnos un Feedback a la izquierda de esta sección.",
+            "footer":  "Saludos cordiales, el equipo de Feedient.",
+            "close":   "Cerrar ventana"
+        },
+		"development": {
+			"header": "No terminado...",
+			"content": "No está disponible en esta versión de Feedient. Por favor, vuelve pronto a revisarla."
+		}
+    },
+    "api": {
+        "auth": "Error de autorización",
+        "500": {
+            "header": "Cough, cough...",
+            "content": "Nuestros servidores no se sienten muy bien y encontraron un error. Por favor, vuelve a revisarlo pronto. Si el problema persiste, ",
+            "contentlink": "hazlo saber"
+        },
+        "404": {
+            "header": "Página no encontrada...",
+            "content": "La página a la que quieres entrar no existe."
+        },
+        "general": {
+            "header": "Mirar desde aquí...",
+            "content": "Imposible conectarse a nuestros servidores. Por favor, vuelve pronto."
+        }
+    },
+    "feed": {
+        "load": "Nos fue imposible cargar tus publicaciones.",
+        "responded": "Siguiente error:",
+        "tryAgain": "Por favor, vuelve a recargar pronto."
+    }
+}

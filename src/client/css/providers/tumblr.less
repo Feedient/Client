@@ -1,0 +1,62 @@
+@tumblrColor:#2c4762;
+
+.tumblr-color {
+	color:@tumblrColor;
+}
+
+.button.feedient-tumblr-button {
+	background-color:@tumblrColor;
+	border-color:@tumblrColor;
+	text-align:left;
+
+	&:hover {
+		color:@tumblrColor;
+	}
+}
+
+.feedient-tumblr {
+	.color-liked { color:#e33f3f !important; }
+	.color-reblogged { color:@primaryColor !important; }
+	h1, a {
+		color:@tumblrColor;
+	}
+
+	a:hover {
+		color:darken(@tumblrColor, 15%);
+	}
+
+	.post {
+		&:hover {
+			.actions {
+				a {
+					color:@tumblrColor;
+				}
+			}
+		}
+		.post-image {
+			height:350px;
+
+			.img-small {
+				height:270px;
+			}
+		}
+	}
+}
+
+#compose-accounts .tumblr-toggle {
+	background-color:@tumblrColor;
+	border-color:@tumblrColor;
+
+	&:hover {
+		background-color:darken(@tumblrColor, 15%);
+		border-color:darken(@tumblrColor, 15%);
+	}
+
+	&.toggle-off {
+		color:@tumblrColor;
+
+		&:hover {
+			border-color:@tumblrColor;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+<div class="context">
+	<i class="fa fa-retweet"></i>
+	<a href="http://twitter.com/{{user.screen_name}}" target="_blank">{{user.name}}</a> {{i18n 'twitter:retweeted' 'toLowerCase'}}
+</div>
+
+<div class="left">
+	<a href="http://twitter.com/{{retweeted_status.user.screen_name}}" class="avatar" target="_blank">
+		<img src="{{retweeted_status.user.profile_image_url_https}}" alt="{{retweeted_status.user.name}}">
+	</a>
+
+	<a href="http://twitter.com/{{retweeted_status.user.screen_name}}/status/{{retweeted_status.id_str}}" class="time" target="_blank" data-timestamp="{{retweeted_status.created_at}}">{{timeFormat retweeted_status.created_at}}</a>
+</div>
+
+<a href="http://twitter.com/{{retweeted_status.user.screen_name}}" class="name" target="_blank">
+	{{retweeted_status.user.name}}
+	<span class="username">@{{retweeted_status.user.screen_name}}</span>
+</a>
+
+<div class="message">
+	{{{twitterText retweeted_status.text retweeted_status.entities}}}
+</div>
+
+{{#unless isLightbox}}
+	{{#if retweeted_status.entities.media}}
+		{{#biggerThan retweeted_status.entities.media.length 1}}<div class="post-multi-images">{{/biggerThan}}
+		{{#each retweeted_status.entities.media}}
+			<a href="javascript:void(0)" onClick="app.lib.ui.lightbox('{{../parent.provider._id}}', '{{../id_str}}', '{{media_url_https}}:large', 'twitter')" class="post-image" target="_blank" style="background-image:url({{media_url_https}})"></a>
+		{{/each}}
+		{{#biggerThan retweeted_status.entities.media.length 1}}</div>{{/biggerThan}}
+	{{/if}}
+{{/unless}}
+
+{{#ifEither retweeted_status.retweet_count retweeted_status.favorite_count}}
+<section class="twitter-stats">
+	{{#if retweeted_status.retweet_count}}
+		<a><strong>{{retweeted_status.retweet_count}}</strong> {{i18n 'twitter:retweetsCAPS' }}</a>
+	{{/if}}
+
+	{{#if retweeted_status.favorite_count}}
+		<a><strong>{{retweeted_status.favorite_count}}</strong> {{i18n 'twitter:favoritesCAPS' }}</a>
+	{{/if}}
+</section>
+{{/ifEither}}

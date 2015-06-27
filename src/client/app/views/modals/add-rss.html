@@ -1,0 +1,27 @@
+<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal">
+	<i class="fa fa-times"></i>
+</a>
+<h1>Find RSS feed</h1>
+
+
+
+<form action="" id="add-rss-feed" style="margin-bottom: 0;">
+	<i class="fa fa-search input-icon" id="rss-search-icon"></i>
+	<!--<i class="fa fa-spinner fa-spin input-icon"></i>-->
+
+	<input type="text" class="has-input-icon" placeholder="Search or enter feed URL..." id="rss-feed-search">
+	
+	<div id="rss-name-field">
+		<label for="rss-name-field-input">Give the feed a name</label>
+		<input type="text" id="rss-name-field-input" placeholder="My news site" maxlength="20">
+	</div>
+
+	<ul id="rss-search-results"></ul>
+</form>
+
+
+<div class="right">
+	<a href="javascript:void(0)" class="button" id="add-rss-button">Add feed</a>
+</div>
+
+<div class="clear"></div>

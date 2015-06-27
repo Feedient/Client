@@ -1,0 +1,61 @@
+﻿{
+	"yes": "sim",
+	"no":  "n&atilde;o",
+    "nav": {
+        "feeds":    "Feeds",
+        "settings": "Configura.",
+        "feedback": "Feedback",
+        "logout":   "Sair"
+    },
+    "misc": {
+        "loading":  "Carregando..."
+    },
+    "compose": {
+        "header": "Escrever mensagem",
+        "postTo1": "Postar no (",
+        "postTo2": "selecionado(s))",
+        "messageHeader": "Messagem",
+        "messageButton": "Enviar mensagem",
+        "photo": "Fotos anexas n&atilde;o est&atilde;o dispon&iacute;veis nesta vers&atilde;o do Feedient. Por favor, cheque futuramente."
+    },
+	"index": {
+		"scroll": "Rolar para o topo",
+		"close":  "Fechar"
+	},
+	"logout": {
+		"logout": "Sair",
+		"sure":   "Voc&ecirc; tem certeza que deseja sair?",
+		"cancel": "Cancelar",
+		"confirm":    "Sim, desejo sair"
+	},
+	"premium":{
+		"header": "Esta &eacute; uma fun&ccedil;&atilde;o Premium",
+		"content":    "No entanto, planos Premium ainda n&atilde;o est&atilde;o dispon&iacute;veis. Por favor, cheque futuramente."
+	},
+	"settings":{
+		"accounts":   "Contas",
+		"disconnect": "Desconectar",
+		"addAccount": "Adicionar contas",
+		"FeedientAccount":    "Conta Feedient",
+		"email":  "Endere&ccedil;o de Email",
+        "language": {
+            "label":    "Linguagem",
+            "button":   "Salvar linguagem"    
+        },
+		"password": {
+			"current":  "Senha atual",
+			"new":      "Nova senha",
+			"repeat":   "Repita a nova senha",
+            "button":   "Salvar configura&ccedil;&otilde;es"
+		},
+		"updated":    "Sua conta foi atualizada",
+		"updated_language": "Salvo! Recarregando Feedient...",
+		"sessions": {
+			"header":    "Sess&otilde;es ativas",
+			"explanation":   "Sempre que voc&ecirc; acessa o Feedient, uma nova sess&atilde;o &eacute; criada e guardada em seu navegador. Caso queira sair remotamente de uma delas, simplesmente remova-a da lista abaixo.",
+			"lastActive":    "&Uacute;ltima atividade: ",
+			"disconnect":    "Desconectar essa sess&atilde;o",
+			"clear": "Limpar todas as sess&otilde;es"
+		}
+	}
+}

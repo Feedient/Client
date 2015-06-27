@@ -1,0 +1,20 @@
+<a href="javascript:void(0)" onClick="app.lib.ui.modal.hide()" class="close-modal"><i class="fa fa-times"></i></a>
+<h1><i class="fa fa-question-circle"></i> Help</h1>
+
+<form id="feedback-form" onSubmit="app.lib.ui.feedback.submitHelp(); return false;">
+	<label for="feedback-email">Email address</label>
+	<input type="text" name="feedback-email" id="feedback-email" value="{{ email }}">
+
+	<label for="feedback-subject">Subject</label>
+	<input type="text" name="feedback-subject" id="feedback-subject">
+
+	<label for="feedback-message">Message</label>
+	<textarea id="feedback-message" name="feedback-message" style="height:75px;max-height:75px;"></textarea>
+
+	<div class="bottom">
+		<div class="right">
+			<a href="javascript:void(0)" onClick="app.lib.ui.feedback.submitHelp()" class="button right">Submit</a>
+			<div class="clear"></div>
+		</div>
+	</div>
+</form>

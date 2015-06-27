@@ -1,0 +1,27 @@
+<div class="facebook" style="width:400px;" id="pushout-{{ providerId }}-{{ postData.id }}">
+	{{{ fbView }}}
+
+	<div id="pushout-actions">
+		<a class="like-button {{#if postData.user_likes}}color-liked{{/if}}" href="javascript:void(0)" onClick="app.lib.user.getProvider('{{providerId}}').actions.like('{{postData.id}}', this, true)">
+			<i class="fa fa-thumbs-up"></i> {{i18n 'facebook:like' }}{{#if postData.user_likes}}d{{/if}}
+		</a>
+	</div>
+
+	<div id="facebook-pushout">
+		<form onSubmit="app.lib.user.getProvider('{{providerId}}').actions.submitComment('{{ postData.id }}')">
+			<textarea id="comment-text" style="width:360px;max-width:360px;" placeholder="Write a comment..."></textarea>
+			<div class="bottom">
+				<div class="right">
+					<a href="javascript:void(0)" onclick="app.lib.user.getProvider('{{providerId}}').actions.submitComment('{{ postData.id }}')" class="button right" id="compose-submit-button">{{i18n 'facebook:comment' }}</a>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+				<div id="comment-loading" class="inline-loading" style="display:none;"></div>
+			</div>
+		</form>
+		
+		<div id="pushout-comments-{{ providerId }}-{{ postData.id }}" class="pushout-facebook-comments">
+			<div class="inline-loading"></div>
+		</div>
+	</div>
+</div>

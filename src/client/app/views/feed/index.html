@@ -1,0 +1,18 @@
+{{#each providers}}
+	<aside class="column feedient-{{providerName}}" id="column-{{_id}}" data-draggable>
+		<h1>
+			<div class="drag-icon">|||</div>
+			{{#if shouldShowName}}<span class="name">{{shorten name 18}}</span>{{/if}}
+			<i class="{{icon}}"></i>
+			{{formattedName}}
+		</h1>
+
+		<div id="overlays-{{_id}}" class="overlays-container"></div>
+
+		<a href="javascript:void(0)" class="scroll-overlay"><i class="fa fa-arrow-up"></i></a>
+
+		<section class="posts animated-overlay" id="posts-{{_id}}">
+			<div class="inline-loading" id="loader-{{_id}}"></div>
+		</section>
+	</aside>
+{{/each}}
