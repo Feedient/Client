@@ -4,7 +4,8 @@
 **As we do not have any plan of re-opening, and the project was just gathering dust, we decided to release all code and assets to the public. We do not have any intention of maintaining the repositories – they serve mainly as historic evidence. Feel free to use any code or design in any way you wish.**
 
 *Original private repository readme follows below:*
-–––
+
+---
 
 ![Feedient](http://i44.tinypic.com/350o5y8.png)
 #### Client side
